@@ -8,10 +8,6 @@
 
 <style>
 
-/* =========================================
-   기본
-========================================= */
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -49,13 +45,12 @@ a {
 }
 
 
-/* =========================================
-   전체 프레임
-========================================= */
+/* =================================
+   전체
+================================= */
 
 .page {
     width: min(980px, 100%);
-
     margin: auto;
 
     position: relative;
@@ -64,14 +59,14 @@ a {
 
     background: #0d0a0d;
 
-    border: 1px solid rgba(217, 119, 157, 0.55);
+    border:
+        1px solid
+        rgba(217, 119, 157, 0.55);
 
     box-shadow:
-        0 0 45px rgba(125, 28, 70, 0.12);
+        0 0 45px
+        rgba(125, 28, 70, 0.12);
 }
-
-
-/* 얇은 안쪽 프레임 */
 
 .page::before {
     content: "";
@@ -80,19 +75,19 @@ a {
 
     inset: 6px;
 
-    border: 1px solid rgba(226, 158, 184, 0.18);
+    border:
+        1px solid
+        rgba(226, 158, 184, 0.18);
 
     pointer-events: none;
 }
 
 
-/* =========================================
+/* =================================
    HEADER
-========================================= */
+================================= */
 
 .top {
-    position: relative;
-
     display: flex;
 
     justify-content: space-between;
@@ -106,22 +101,12 @@ a {
 }
 
 .logo {
-    color: #eadce2;
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
     font-size: 25px;
 
     font-weight: normal;
 
     letter-spacing: 0.18em;
 }
-
-
-/* 타자기 느낌 */
 
 .type {
     font-family:
@@ -137,55 +122,42 @@ a {
 }
 
 
-/* =========================================
-   MAIN PROFILE
-========================================= */
+/* =================================
+   메인
+================================= */
 
-.profile {
-    position: relative;
+.main {
 
     display: grid;
 
     grid-template-columns:
-        280px
-        1fr
-        150px;
+        280px 1fr 150px;
 
-    gap: 28px;
+    gap: 20px;
 
-    padding: 38px 28px;
-
-    border-bottom:
-        1px solid
-        rgba(226, 158, 184, 0.3);
+    padding: 35px;
 }
 
 
-/* =========================================
-   IMAGE
-========================================= */
+/* =================================
+   이미지
+================================= */
 
 .main-image {
-    width: 100%;
+
     height: 350px;
 
-    position: relative;
-
-    overflow: hidden;
-
-    background: #050405;
+    padding: 6px;
 
     border:
         1px solid
-        rgba(230, 153, 181, 0.55);
+        rgba(217, 119, 157, 0.45);
 
-    padding: 6px;
+    background: #090709;
 }
 
-
-/* 실제 이미지 */
-
 .main-image img {
+
     width: 100%;
     height: 100%;
 
@@ -193,512 +165,346 @@ a {
 
     object-fit: cover;
 
-    /* 이미지 자체는 흐리게 하지 않음 */
     filter: none;
 }
 
 
-/* 이미지 주변 핑크빛 */
+/* =================================
+   PROFILE
+================================= */
 
-.main-image::after {
-    content: "";
+.profile {
 
-    position: absolute;
+    display: flex;
 
-    inset: 6px;
+    flex-direction: column;
 
-    pointer-events: none;
+    justify-content: center;
 
-    box-shadow:
-        inset 0 0 25px
-        rgba(255, 90, 145, 0.10);
+    padding: 10px 5px;
 }
 
+.profile-name {
 
-/* 번호 */
+    font-size: 36px;
 
-.image-number {
-    position: absolute;
+    font-weight: normal;
 
-    right: 12px;
-    bottom: 12px;
+    letter-spacing: 0.08em;
 
-    padding: 3px 6px;
+    color: #eee2e7;
 
-    background: rgba(0,0,0,0.75);
+    text-shadow:
+        0 0 18px
+        rgba(217, 119, 157, 0.2);
+}
 
-    color: #d88da8;
+.profile-sub {
+
+    margin-top: 8px;
 
     font-family:
         "Courier New",
-        monospace;
-
-    font-size: 9px;
-
-    letter-spacing: 0.1em;
-}
-
-
-/* =========================================
-   PROFILE TEXT
-========================================= */
-
-.profile-info {
-    padding-top: 5px;
-}
-
-.small-title {
-    margin-bottom: 12px;
-
-    color: #c56d91;
-
-    font-family:
-        "Courier New",
+        Courier,
         monospace;
 
     font-size: 10px;
 
-    letter-spacing: 0.18em;
+    letter-spacing: 0.14em;
+
+    color: #956b7b;
 }
-
-
-/* 이름 */
-
-.name {
-    margin-bottom: 22px;
-
-    color: #eee5e9;
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size:
-        clamp(45px, 6vw, 70px);
-
-    font-weight: normal;
-
-    line-height: 0.86;
-
-    text-shadow:
-        0 0 18px
-        rgba(207, 71, 120, 0.18);
-}
-
-
-/* 핑크 선 */
 
 .profile-line {
+
     width: 100%;
 
     height: 1px;
 
-    margin-bottom: 20px;
+    margin: 25px 0;
 
     background:
-        linear-gradient(
-            to right,
-            rgba(221, 110, 151, 0.65),
-            rgba(221, 110, 151, 0.12),
-            transparent
-        );
+        rgba(226, 158, 184, 0.22);
 }
 
-
-/* 소개 */
-
 .profile-text {
-    max-width: 380px;
-
-    color: #a999a0;
 
     font-family:
         "Courier New",
+        Courier,
         monospace;
 
     font-size: 11px;
 
-    line-height: 1.9;
+    line-height: 1.8;
+
+    color: #b79ca7;
 }
 
 
-/* =========================================
-   META
-========================================= */
+/* =================================
+   NAV
+================================= */
 
-.profile-meta {
-    display: grid;
+.nav {
 
-    grid-template-columns:
-        1fr
-        1fr;
+    display: flex;
 
-    gap: 8px;
+    flex-direction: column;
 
-    margin-top: 28px;
+    justify-content: center;
+
+    gap: 12px;
 }
 
-.meta-box {
-    padding: 10px;
+.nav a {
+
+    padding:
+        13px 10px;
 
     border:
         1px solid
-        rgba(219, 127, 157, 0.28);
+        rgba(217, 119, 157, 0.28);
+
+    text-align: center;
+
+    transition:
+        0.25s ease;
+}
+
+.nav a:hover {
+
+    border-color:
+        rgba(238, 150, 183, 0.7);
 
     background:
-        rgba(197, 67, 112, 0.035);
+        rgba(128, 35, 70, 0.12);
+
+    box-shadow:
+        0 0 18px
+        rgba(160, 43, 91, 0.16);
 }
 
-.meta-title {
-    color: #8e536b;
+.nav-title {
 
-    font-family:
-        "Courier New",
-        monospace;
+    display: block;
 
-    font-size: 8px;
+    font-size: 13px;
 
-    letter-spacing: 0.13em;
+    letter-spacing: 0.1em;
 }
 
-.meta-value {
+.nav-small {
+
+    display: block;
+
     margin-top: 5px;
 
-    color: #d9cbd1;
-
     font-family:
         "Courier New",
+        Courier,
         monospace;
 
-    font-size: 11px;
+    font-size: 7px;
+
+    letter-spacing: 0.1em;
+
+    color: #86616f;
 }
 
 
-/* =========================================
-   LINKS
-========================================= */
+/* =================================
+   COLLECTION
+================================= */
 
-.links {
-    padding-left: 20px;
+.collection {
 
-    border-left:
+    margin:
+        0 35px 35px;
+
+    padding-top: 25px;
+
+    border-top:
         1px solid
         rgba(226, 158, 184, 0.25);
 }
 
-.links-title {
-    margin-bottom: 14px;
-
-    color: #dfc8d1;
-
-    font-family:
-        Georgia,
-        serif;
-
-    font-size: 21px;
-}
-
-.links a {
-    display: block;
-
-    padding: 9px 0;
-
-    border-bottom:
-        1px solid
-        rgba(226, 158, 184, 0.12);
-
-    color: #a88c98;
-
-    font-family:
-        "Courier New",
-        monospace;
-
-    font-size: 10px;
-
-    letter-spacing: 0.08em;
-
-    transition: 0.2s;
-}
-
-.links a:hover {
-    color: #f0a5c1;
-
-    padding-left: 5px;
-}
-
-
-/* =========================================
-   COLLECTION
-========================================= */
-
-.collection {
-    padding: 38px 28px 32px;
-}
-
 .collection-title {
-    display: flex;
 
-    align-items: center;
+    margin-bottom: 17px;
 
-    gap: 15px;
-
-    margin-bottom: 22px;
-}
-
-.collection-title h2 {
-    color: #e1d5da;
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size: 25px;
+    font-size: 17px;
 
     font-weight: normal;
+
+    letter-spacing: 0.12em;
 }
 
-.collection-title span {
-    flex: 1;
+.collection-grid {
 
-    height: 1px;
-
-    background:
-        linear-gradient(
-            to right,
-            rgba(215, 110, 149, 0.35),
-            transparent
-        );
-}
-
-
-/* =========================================
-   CATEGORY
-========================================= */
-
-.category-grid {
     display: grid;
 
     grid-template-columns:
-        1fr
-        1fr;
+        repeat(3, 1fr);
 
     gap: 14px;
 }
 
 .category {
-    min-height: 190px;
 
-    position: relative;
+    min-height: 135px;
 
-    overflow: hidden;
-
-    padding: 25px;
-
-    background:
-        radial-gradient(
-            circle at 80% 30%,
-            rgba(158, 46, 91, 0.13),
-            transparent 40%
-        ),
-        #100c10;
+    padding: 20px;
 
     border:
         1px solid
-        rgba(220, 135, 164, 0.38);
+        rgba(217, 119, 157, 0.32);
+
+    background: #100c10;
 
     transition:
-        border-color .25s,
-        transform .25s;
+        0.25s ease;
 }
 
 .category:hover {
+
     transform: translateY(-3px);
 
     border-color:
-        rgba(241, 151, 182, 0.7);
+        rgba(238, 150, 183, 0.72);
+
+    box-shadow:
+        0 0 25px
+        rgba(160, 43, 91, 0.18);
 }
 
+.category h2 {
 
-/* 작은 번호 */
-
-.category small {
-    color: #a35f79;
-
-    font-family:
-        "Courier New",
-        monospace;
-
-    font-size: 9px;
-
-    letter-spacing: 0.14em;
-}
-
-
-/* 큰 제목 */
-
-.category h3 {
-    margin-top: 23px;
-
-    color: #e9dfe4;
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size: 46px;
+    font-size: 20px;
 
     font-weight: normal;
 
-    text-shadow:
-        0 0 20px
-        rgba(207, 63, 116, 0.16);
+    letter-spacing: 0.08em;
 }
 
+.category small {
 
-/* 작은 설명 */
+    display: block;
 
-.category p {
-    margin-top: 5px;
-
-    color: #765e68;
+    margin-top: 7px;
 
     font-family:
         "Courier New",
+        Courier,
+        monospace;
+
+    font-size: 8px;
+
+    color: #8e6877;
+}
+
+.category p {
+
+    margin-top: 20px;
+
+    font-family:
+        "Courier New",
+        Courier,
         monospace;
 
     font-size: 9px;
+
+    line-height: 1.6;
+
+    color: #896c77;
 }
 
 
-/* 큰 배경 숫자 */
-
-.category::after {
-    content: attr(data-number);
-
-    position: absolute;
-
-    right: 12px;
-    bottom: -45px;
-
-    color:
-        rgba(206, 76, 126, 0.045);
-
-    font-family:
-        Georgia,
-        serif;
-
-    font-size: 150px;
-
-    line-height: 1;
-
-    pointer-events: none;
-}
-
-
-/* =========================================
+/* =================================
    FOOTER
-========================================= */
+================================= */
 
-.bottom {
-    display: flex;
+.footer {
 
-    justify-content: space-between;
-
-    padding: 18px 28px 12px;
+    padding:
+        18px 25px;
 
     border-top:
         1px solid
-        rgba(226, 158, 184, 0.14);
+        rgba(226, 158, 184, 0.2);
 
-    color: #654d58;
+    text-align: center;
 
     font-family:
         "Courier New",
+        Courier,
         monospace;
 
     font-size: 8px;
 
     letter-spacing: 0.12em;
+
+    color: #624955;
 }
 
 
-/* =========================================
-   MOBILE
-========================================= */
+/* =================================
+   모바일
+================================= */
 
 @media (max-width: 750px) {
 
     body {
-        padding: 8px;
-    }
-
-    .page {
-        padding: 9px;
+        padding: 12px 8px;
     }
 
     .top {
-        padding:
-            20px
-            15px;
+        padding: 18px;
     }
 
     .logo {
-        font-size: 22px;
+        font-size: 19px;
     }
 
-    .profile {
+    .type {
+        font-size: 8px;
+    }
+
+    .main {
+
         grid-template-columns: 1fr;
 
-        gap: 25px;
+        padding: 25px 15px;
 
-        padding:
-            28px
-            15px;
     }
 
     .main-image {
-        height: min(110vw, 430px);
+
+        height: 380px;
     }
 
-    .links {
-        padding:
-            20px
-            0
-            0;
+    .profile {
+        padding: 10px;
+    }
 
-        border-left: none;
+    .nav {
 
-        border-top:
-            1px solid
-            rgba(226, 158, 184, 0.25);
+        display: grid;
+
+        grid-template-columns:
+            repeat(3, 1fr);
     }
 
     .collection {
-        padding:
-            30px
-            15px;
+
+        margin:
+            0 15px 25px;
     }
 
-    .category-grid {
-        grid-template-columns: 1fr;
-    }
+    .collection-grid {
 
-    .category {
-        min-height: 170px;
-    }
-
-    .category h3 {
-        font-size: 40px;
-    }
-
-    .bottom {
-        padding:
-            16px
-            15px
-            10px;
+        grid-template-columns:
+            1fr;
     }
 }
 
@@ -708,36 +514,31 @@ a {
 
 <body>
 
-
 <div class="page">
 
 
-    <!-- ===============================
-         HEADER
-    ================================ -->
+    <!-- HEADER -->
 
     <header class="top">
 
-        <div class="logo">
+        <a href="index.html" class="logo">
             MY PAGE
-        </div>
+        </a>
 
         <div class="type">
-            00 / 00 / 00
+            PERSONAL INDEX
         </div>
 
     </header>
 
 
 
-    <!-- ===============================
-         PROFILE
-    ================================ -->
+    <!-- MAIN -->
 
-    <section class="profile">
+    <main class="main">
 
 
-        <!-- 메인 이미지 -->
+        <!-- IMAGE -->
 
         <div class="main-image">
 
@@ -746,151 +547,157 @@ a {
                 alt="main image"
             >
 
-            <span class="image-number">
-                01
-            </span>
-
         </div>
 
 
 
-        <!-- 이름 / 설명 -->
+        <!-- PROFILE -->
 
-        <div class="profile-info">
+        <section class="profile">
 
-            <p class="small-title">
-                PROFILE
-            </p>
-
-            <h1 class="name">
-                Personal<br>
-               
+            <h1 class="profile-name">
+                YOUR NAME
             </h1>
+
+            <div class="profile-sub">
+                DREAM / OC / PAIR
+            </div>
 
             <div class="profile-line"></div>
 
             <p class="profile-text">
-                오로지 백업만을 위해 만든곳입니다.
+                여기에 원하는 내용을 적어주세요.<br>
+                좋아하는 것, 사용하는 이름,<br>
+                기타 간단한 프로필 등을 넣을 수 있습니다.
             </p>
 
-
-            <div class="profile-meta">
-
-                <div class="meta-box">
-
-                    <p class="meta-title">
-                        DREAM
-                    </p>
-
-                    <p class="meta-value">
-                        00
-                    </p>
-
-                </div>
-
-                <div class="meta-box">
-
-                    <p class="meta-title">
-                        OC PAIR
-                    </p>
-
-                    <p class="meta-value">
-                        00
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
+        </section>
 
 
 
-        <!-- 링크 -->
+        <!-- NAV -->
 
-        <nav class="links">
-
-            <p class="links-title">
-                LINKS
-            </p>
-
-            <a href="index.html">
-                HOME
-            </a>
+        <nav class="nav">
 
             <a href="dream.html">
-                DREAM
+
+                <span class="nav-title">
+                    DREAM
+                </span>
+
+                <span class="nav-small">
+                    COLLECTION
+                </span>
+
             </a>
 
+
             <a href="oc.html">
-                OC PAIR
+
+                <span class="nav-title">
+                    OC
+                </span>
+
+                <span class="nav-small">
+                    CHARACTERS
+                </span>
+
+            </a>
+
+
+            <a href="pair.html">
+
+                <span class="nav-title">
+                    OC PAIR
+                </span>
+
+                <span class="nav-small">
+                    RELATIONSHIP
+                </span>
+
             </a>
 
         </nav>
 
-
-    </section>
-
+    </main>
 
 
-    <!-- ===============================
-         COLLECTION
-    ================================ -->
+
+    <!-- COLLECTION -->
 
     <section class="collection">
 
-        <div class="collection-title">
-
-            <h2>
-                COLLECTION
-            </h2>
-
-            <span></span>
-
-        </div>
+        <h2 class="collection-title">
+            COLLECTION
+        </h2>
 
 
-        <div class="category-grid">
+        <div class="collection-grid">
 
+
+            <!-- DREAM -->
 
             <a
                 href="dream.html"
                 class="category"
-                data-number="01"
             >
 
+                <h2>
+                    DREAM
+                </h2>
+
                 <small>
-                    01 / COLLECTION
+                    01 / DREAM PAIRS
                 </small>
 
-                <h3>
-                    DREAM
-                </h3>
-
                 <p>
-                    dream
+                    DREAM PAIR
                 </p>
 
             </a>
 
 
 
+            <!-- OC -->
+
             <a
                 href="oc.html"
                 class="category"
-                data-number="02"
             >
 
+                <h2>
+                    OC
+                </h2>
+
                 <small>
-                    02 / COLLECTION
+                    02 / CHARACTERS
                 </small>
 
-                <h3>
+                <p>
+                    ORIGINAL CHARACTERS
+                </p>
+
+            </a>
+
+
+
+            <!-- OC PAIR -->
+
+            <a
+                href="pair.html"
+                class="category"
+            >
+
+                <h2>
                     OC PAIR
-                </h3>
+                </h2>
+
+                <small>
+                    03 / RELATIONSHIP
+                </small>
 
                 <p>
-                    original characters
+                    CHARACTER PAIRS
                 </p>
 
             </a>
@@ -902,25 +709,16 @@ a {
 
 
 
-    <!-- ===============================
-         FOOTER
-    ================================ -->
+    <!-- FOOTER -->
 
-    <footer class="bottom">
+    <footer class="footer">
 
-        <span>
-            20XX
-        </span>
-
-        <span>
-            © YOUR NAME
-        </span>
+        PERSONAL INDEX
 
     </footer>
 
 
 </div>
-
 
 </body>
 </html>
