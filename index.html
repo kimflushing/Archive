@@ -8,12 +8,9 @@
 
 <style>
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Serif+KR:wght@300;400;500;600&display=swap');
-
-
-/* =====================================================
-   RESET
-===================================================== */
+/* =========================================
+   기본
+========================================= */
 
 * {
     box-sizing: border-box;
@@ -22,7 +19,7 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    background: #080608;
 }
 
 body {
@@ -30,19 +27,20 @@ body {
 
     background:
         radial-gradient(
-            ellipse at top,
-            #30252a 0%,
-            #181517 42%,
-            #0e0d0e 100%
-        );
+            circle at 50% 0%,
+            rgba(116, 37, 72, 0.28),
+            transparent 38%
+        ),
+        #080608;
 
-    color: #e4dfdc;
+    color: #e8dfe4;
+
+    padding: 25px 15px;
 
     font-family:
-        "Noto Serif KR",
+        Georgia,
+        "Times New Roman",
         serif;
-
-    padding: 32px 18px;
 }
 
 a {
@@ -51,82 +49,46 @@ a {
 }
 
 
-/* =====================================================
-   전체 페이지
-===================================================== */
+/* =========================================
+   전체 프레임
+========================================= */
 
 .page {
-    width: min(1050px, 100%);
+    width: min(980px, 100%);
 
-    margin: 0 auto;
+    margin: auto;
 
     position: relative;
 
-    padding: 16px;
+    padding: 13px;
 
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255,255,255,.025),
-            transparent 35%
-        ),
-        #181517;
+    background: #0d0a0d;
 
-    border: 1px solid #68585d;
+    border: 1px solid rgba(217, 119, 157, 0.55);
 
     box-shadow:
-        0 25px 80px rgba(0,0,0,.45);
+        0 0 45px rgba(125, 28, 70, 0.12);
 }
 
 
-/* 바깥 장식 프레임 */
+/* 얇은 안쪽 프레임 */
 
 .page::before {
     content: "";
 
     position: absolute;
 
-    inset: 7px;
+    inset: 6px;
 
-    border: 1px solid #393033;
+    border: 1px solid rgba(226, 158, 184, 0.18);
 
     pointer-events: none;
-
-    z-index: 20;
 }
 
 
-/* 네 모서리의 작은 장식 */
-
-.page::after {
-    content: "†";
-
-    position: absolute;
-
-    top: 11px;
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    color: #80646d;
-
-    background: #181517;
-
-    padding: 0 10px;
-
-    font-family:
-        "Cormorant Garamond",
-        serif;
-
-    font-size: 14px;
-
-    z-index: 21;
-}
-
-
-/* =====================================================
-   TOP
-===================================================== */
+/* =========================================
+   HEADER
+========================================= */
 
 .top {
     position: relative;
@@ -136,58 +98,48 @@ a {
     justify-content: space-between;
     align-items: center;
 
-    padding: 20px 25px 22px;
+    padding: 22px 25px;
 
-    border-bottom: 1px solid #514449;
+    border-bottom:
+        1px solid
+        rgba(226, 158, 184, 0.3);
 }
-
-
-/* 왼쪽 사이트명 */
 
 .logo {
+    color: #eadce2;
+
     font-family:
-        "Cormorant Garamond",
+        Georgia,
+        "Times New Roman",
         serif;
 
-    font-size: 29px;
+    font-size: 25px;
 
-    font-weight: 500;
+    font-weight: normal;
 
-    letter-spacing: .18em;
-
-    color: #eee9e6;
+    letter-spacing: 0.18em;
 }
 
 
-/* 오른쪽 작은 표시 */
+/* 타자기 느낌 */
 
-.top-right {
-    display: flex;
+.type {
+    font-family:
+        "Courier New",
+        Courier,
+        monospace;
 
-    align-items: center;
+    font-size: 10px;
 
-    gap: 9px;
-}
+    letter-spacing: 0.16em;
 
-.dot {
-    width: 7px;
-    height: 7px;
-
-    border: 1px solid #8c747b;
-
-    transform: rotate(45deg);
-}
-
-.dot:nth-child(2) {
-    background: #684852;
-
-    border-color: #684852;
+    color: #9c687c;
 }
 
 
-/* =====================================================
-   PROFILE
-===================================================== */
+/* =========================================
+   MAIN PROFILE
+========================================= */
 
 .profile {
     position: relative;
@@ -195,36 +147,39 @@ a {
     display: grid;
 
     grid-template-columns:
-        300px
-        minmax(250px, 1fr)
-        170px;
+        280px
+        1fr
+        150px;
 
-    gap: 30px;
+    gap: 28px;
 
-    padding: 42px 30px;
+    padding: 38px 28px;
 
-    border-bottom: 1px solid #514449;
+    border-bottom:
+        1px solid
+        rgba(226, 158, 184, 0.3);
 }
 
 
-/* =====================================================
-   메인 이미지
-===================================================== */
+/* =========================================
+   IMAGE
+========================================= */
 
 .main-image {
+    width: 100%;
     height: 350px;
 
     position: relative;
 
     overflow: hidden;
 
-    background: #0c0b0c;
+    background: #050405;
 
-    border: 1px solid #75646a;
+    border:
+        1px solid
+        rgba(230, 153, 181, 0.55);
 
-    box-shadow:
-        inset 0 0 0 5px #171416,
-        inset 0 0 0 6px #3e3438;
+    padding: 6px;
 }
 
 
@@ -238,140 +193,139 @@ a {
 
     object-fit: cover;
 
-    filter:
-        saturate(.75)
-        contrast(1.05);
+    /* 이미지 자체는 흐리게 하지 않음 */
+    filter: none;
 }
 
 
-/* 이미지 위쪽 작은 라인 */
+/* 이미지 주변 핑크빛 */
 
-.main-image::before {
+.main-image::after {
     content: "";
 
     position: absolute;
 
-    top: 13px;
-    left: 13px;
-    right: 13px;
+    inset: 6px;
 
-    height: 1px;
+    pointer-events: none;
 
-    background: rgba(255,255,255,.25);
-
-    z-index: 2;
+    box-shadow:
+        inset 0 0 25px
+        rgba(255, 90, 145, 0.10);
 }
 
 
-/* 이미지 번호 */
+/* 번호 */
 
 .image-number {
     position: absolute;
 
-    right: 14px;
+    right: 12px;
     bottom: 12px;
 
-    padding: 2px 5px;
+    padding: 3px 6px;
 
-    background: rgba(10,8,9,.7);
+    background: rgba(0,0,0,0.75);
 
-    color: #d2c4c6;
+    color: #d88da8;
 
     font-family:
-        "Cormorant Garamond",
-        serif;
+        "Courier New",
+        monospace;
 
-    font-size: 12px;
+    font-size: 9px;
 
-    letter-spacing: .08em;
-
-    z-index: 3;
+    letter-spacing: 0.1em;
 }
 
 
-/* =====================================================
+/* =========================================
    PROFILE TEXT
-===================================================== */
+========================================= */
 
 .profile-info {
-    padding-top: 4px;
+    padding-top: 5px;
 }
 
-
-/* 작은 제목 */
-
 .small-title {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 
-    color: #997983;
+    color: #c56d91;
 
     font-family:
-        "Cormorant Garamond",
-        serif;
+        "Courier New",
+        monospace;
 
-    font-size: 11px;
+    font-size: 10px;
 
-    letter-spacing: .28em;
+    letter-spacing: 0.18em;
 }
 
 
 /* 이름 */
 
 .name {
-    margin-bottom: 21px;
+    margin-bottom: 22px;
 
-    color: #eee9e7;
+    color: #eee5e9;
 
     font-family:
-        "Cormorant Garamond",
+        Georgia,
+        "Times New Roman",
         serif;
 
     font-size:
-        clamp(48px, 6vw, 76px);
+        clamp(45px, 6vw, 70px);
 
-    font-weight: 400;
+    font-weight: normal;
 
-    line-height: .82;
+    line-height: 0.86;
 
-    letter-spacing: -.02em;
+    text-shadow:
+        0 0 18px
+        rgba(207, 71, 120, 0.18);
 }
 
 
-/* 이름 밑 선 */
+/* 핑크 선 */
 
 .profile-line {
     width: 100%;
 
     height: 1px;
 
-    margin-bottom: 21px;
+    margin-bottom: 20px;
 
     background:
         linear-gradient(
             to right,
-            #80616a,
-            #514449,
+            rgba(221, 110, 151, 0.65),
+            rgba(221, 110, 151, 0.12),
             transparent
         );
 }
 
 
-/* 설명 */
+/* 소개 */
 
 .profile-text {
-    max-width: 390px;
+    max-width: 380px;
 
-    color: #aaa1a0;
+    color: #a999a0;
 
-    font-size: 12px;
+    font-family:
+        "Courier New",
+        monospace;
 
-    line-height: 2;
+    font-size: 11px;
+
+    line-height: 1.9;
 }
 
 
-/* =====================================================
+/* =========================================
    META
-===================================================== */
+========================================= */
 
 .profile-meta {
     display: grid;
@@ -382,151 +336,127 @@ a {
 
     gap: 8px;
 
-    margin-top: 30px;
+    margin-top: 28px;
 }
 
 .meta-box {
-    padding: 10px 11px;
+    padding: 10px;
 
-    background: rgba(255,255,255,.015);
+    border:
+        1px solid
+        rgba(219, 127, 157, 0.28);
 
-    border: 1px solid #493d41;
+    background:
+        rgba(197, 67, 112, 0.035);
 }
 
 .meta-title {
-    color: #82656d;
+    color: #8e536b;
 
     font-family:
-        "Cormorant Garamond",
-        serif;
+        "Courier New",
+        monospace;
 
-    font-size: 9px;
+    font-size: 8px;
 
-    letter-spacing: .18em;
+    letter-spacing: 0.13em;
 }
 
 .meta-value {
-    margin-top: 4px;
+    margin-top: 5px;
 
-    color: #d5cdca;
+    color: #d9cbd1;
 
     font-family:
-        "Cormorant Garamond",
-        serif;
+        "Courier New",
+        monospace;
 
-    font-size: 15px;
+    font-size: 11px;
 }
 
 
-/* =====================================================
+/* =========================================
    LINKS
-===================================================== */
+========================================= */
 
 .links {
-    padding-left: 22px;
+    padding-left: 20px;
 
-    border-left: 1px solid #514449;
+    border-left:
+        1px solid
+        rgba(226, 158, 184, 0.25);
 }
 
 .links-title {
-    margin-bottom: 17px;
+    margin-bottom: 14px;
 
-    color: #ddd5d2;
+    color: #dfc8d1;
 
     font-family:
-        "Cormorant Garamond",
+        Georgia,
         serif;
 
-    font-size: 22px;
-
-    letter-spacing: .04em;
+    font-size: 21px;
 }
-
-
-/* 링크 */
 
 .links a {
     display: block;
 
-    position: relative;
+    padding: 9px 0;
 
-    padding: 10px 0;
+    border-bottom:
+        1px solid
+        rgba(226, 158, 184, 0.12);
 
-    border-bottom: 1px solid #352d30;
-
-    color: #aaa1a0;
+    color: #a88c98;
 
     font-family:
-        "Cormorant Garamond",
-        serif;
+        "Courier New",
+        monospace;
 
-    font-size: 14px;
+    font-size: 10px;
 
-    letter-spacing: .05em;
+    letter-spacing: 0.08em;
 
-    transition:
-        color .2s,
-        padding .2s;
-}
-
-.links a::before {
-    content: "—";
-
-    position: absolute;
-
-    left: -17px;
-
-    color: #765762;
-
-    opacity: 0;
-
-    transition: .2s;
+    transition: 0.2s;
 }
 
 .links a:hover {
-    padding-left: 8px;
+    color: #f0a5c1;
 
-    color: #eee8e5;
-}
-
-.links a:hover::before {
-    opacity: 1;
+    padding-left: 5px;
 }
 
 
-/* =====================================================
+/* =========================================
    COLLECTION
-===================================================== */
+========================================= */
 
 .collection {
-    padding: 40px 30px 35px;
+    padding: 38px 28px 32px;
 }
-
-
-/* 제목 */
 
 .collection-title {
     display: flex;
 
     align-items: center;
 
-    gap: 18px;
+    gap: 15px;
 
-    margin-bottom: 24px;
+    margin-bottom: 22px;
 }
 
 .collection-title h2 {
-    color: #e5dfdc;
+    color: #e1d5da;
 
     font-family:
-        "Cormorant Garamond",
+        Georgia,
+        "Times New Roman",
         serif;
 
-    font-size: 27px;
+    font-size: 25px;
 
-    font-weight: 400;
-
-    letter-spacing: .05em;
+    font-weight: normal;
 }
 
 .collection-title span {
@@ -537,15 +467,15 @@ a {
     background:
         linear-gradient(
             to right,
-            #57484d,
+            rgba(215, 110, 149, 0.35),
             transparent
         );
 }
 
 
-/* =====================================================
-   DREAM / OC
-===================================================== */
+/* =========================================
+   CATEGORY
+========================================= */
 
 .category-grid {
     display: grid;
@@ -554,53 +484,96 @@ a {
         1fr
         1fr;
 
-    gap: 16px;
+    gap: 14px;
 }
 
-
-/* 카드 */
-
 .category {
-    min-height: 205px;
+    min-height: 190px;
 
     position: relative;
 
     overflow: hidden;
 
-    padding: 27px;
+    padding: 25px;
 
     background:
-        linear-gradient(
-            135deg,
-            rgba(121,82,94,.08),
-            transparent 55%
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(158, 46, 91, 0.13),
+            transparent 40%
         ),
-        #1b1819;
+        #100c10;
 
-    border: 1px solid #584a4f;
+    border:
+        1px solid
+        rgba(220, 135, 164, 0.38);
 
     transition:
-        transform .3s,
-        border-color .3s,
-        background .3s;
+        border-color .25s,
+        transform .25s;
 }
 
 .category:hover {
-    transform: translateY(-5px);
+    transform: translateY(-3px);
 
-    border-color: #8b6c76;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(121,82,94,.13),
-            transparent 60%
-        ),
-        #1e1a1c;
+    border-color:
+        rgba(241, 151, 182, 0.7);
 }
 
 
-/* 큰 숫자 */
+/* 작은 번호 */
+
+.category small {
+    color: #a35f79;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 9px;
+
+    letter-spacing: 0.14em;
+}
+
+
+/* 큰 제목 */
+
+.category h3 {
+    margin-top: 23px;
+
+    color: #e9dfe4;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 46px;
+
+    font-weight: normal;
+
+    text-shadow:
+        0 0 20px
+        rgba(207, 63, 116, 0.16);
+}
+
+
+/* 작은 설명 */
+
+.category p {
+    margin-top: 5px;
+
+    color: #765e68;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 9px;
+}
+
+
+/* 큰 배경 숫자 */
 
 .category::after {
     content: attr(data-number);
@@ -608,29 +581,346 @@ a {
     position: absolute;
 
     right: 12px;
-    bottom: -38px;
+    bottom: -45px;
 
-    color: rgba(153,112,124,.07);
+    color:
+        rgba(206, 76, 126, 0.045);
 
     font-family:
-        "Cormorant Garamond",
+        Georgia,
         serif;
 
     font-size: 150px;
 
     line-height: 1;
+
+    pointer-events: none;
 }
 
 
-/* 작은 번호 */
+/* =========================================
+   FOOTER
+========================================= */
 
-.category small {
-    position: relative;
+.bottom {
+    display: flex;
 
-    z-index: 2;
+    justify-content: space-between;
 
-    color: #80636c;
+    padding: 18px 28px 12px;
+
+    border-top:
+        1px solid
+        rgba(226, 158, 184, 0.14);
+
+    color: #654d58;
 
     font-family:
-        "Cormorant Garamond",
-       
+        "Courier New",
+        monospace;
+
+    font-size: 8px;
+
+    letter-spacing: 0.12em;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 750px) {
+
+    body {
+        padding: 8px;
+    }
+
+    .page {
+        padding: 9px;
+    }
+
+    .top {
+        padding:
+            20px
+            15px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .profile {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+        padding:
+            28px
+            15px;
+    }
+
+    .main-image {
+        height: min(110vw, 430px);
+    }
+
+    .links {
+        padding:
+            20px
+            0
+            0;
+
+        border-left: none;
+
+        border-top:
+            1px solid
+            rgba(226, 158, 184, 0.25);
+    }
+
+    .collection {
+        padding:
+            30px
+            15px;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .category {
+        min-height: 170px;
+    }
+
+    .category h3 {
+        font-size: 40px;
+    }
+
+    .bottom {
+        padding:
+            16px
+            15px
+            10px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<div class="page">
+
+
+    <!-- ===============================
+         HEADER
+    ================================ -->
+
+    <header class="top">
+
+        <div class="logo">
+            MY PAGE
+        </div>
+
+        <div class="type">
+            00 / 00 / 00
+        </div>
+
+    </header>
+
+
+
+    <!-- ===============================
+         PROFILE
+    ================================ -->
+
+    <section class="profile">
+
+
+        <!-- 메인 이미지 -->
+
+        <div class="main-image">
+
+            <img
+                src="main.JPG"
+                alt="main image"
+            >
+
+            <span class="image-number">
+                01
+            </span>
+
+        </div>
+
+
+
+        <!-- 이름 / 설명 -->
+
+        <div class="profile-info">
+
+            <p class="small-title">
+                PROFILE
+            </p>
+
+            <h1 class="name">
+                YOUR<br>
+                NAME
+            </h1>
+
+            <div class="profile-line"></div>
+
+            <p class="profile-text">
+                여기에 원하는 내용을 적어주세요.
+            </p>
+
+
+            <div class="profile-meta">
+
+                <div class="meta-box">
+
+                    <p class="meta-title">
+                        DREAM
+                    </p>
+
+                    <p class="meta-value">
+                        00
+                    </p>
+
+                </div>
+
+                <div class="meta-box">
+
+                    <p class="meta-title">
+                        OC PAIR
+                    </p>
+
+                    <p class="meta-value">
+                        00
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 링크 -->
+
+        <nav class="links">
+
+            <p class="links-title">
+                LINKS
+            </p>
+
+            <a href="index.html">
+                HOME
+            </a>
+
+            <a href="dream.html">
+                DREAM
+            </a>
+
+            <a href="oc.html">
+                OC PAIR
+            </a>
+
+        </nav>
+
+
+    </section>
+
+
+
+    <!-- ===============================
+         COLLECTION
+    ================================ -->
+
+    <section class="collection">
+
+        <div class="collection-title">
+
+            <h2>
+                COLLECTION
+            </h2>
+
+            <span></span>
+
+        </div>
+
+
+        <div class="category-grid">
+
+
+            <a
+                href="dream.html"
+                class="category"
+                data-number="01"
+            >
+
+                <small>
+                    01 / COLLECTION
+                </small>
+
+                <h3>
+                    DREAM
+                </h3>
+
+                <p>
+                    dream
+                </p>
+
+            </a>
+
+
+
+            <a
+                href="oc.html"
+                class="category"
+                data-number="02"
+            >
+
+                <small>
+                    02 / COLLECTION
+                </small>
+
+                <h3>
+                    OC PAIR
+                </h3>
+
+                <p>
+                    original characters
+                </p>
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ===============================
+         FOOTER
+    ================================ -->
+
+    <footer class="bottom">
+
+        <span>
+            20XX
+        </span>
+
+        <span>
+            © YOUR NAME
+        </span>
+
+    </footer>
+
+
+</div>
+
+
+</body>
+</html>
