@@ -1,277 +1,822 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ARCHIVE — Dream & OC</title>
+<title>MY PAGE</title>
 
-    <link rel="stylesheet" href="style.css">
+<style>
+
+/* ==================================================
+   기본
+================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Serif+KR:wght@300;400;500&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #171717;
+    color: #e8e5e3;
+
+    font-family:
+        "Noto Serif KR",
+        serif;
+
+    min-height: 100vh;
+
+    padding: 35px 20px;
+}
+
+
+/* ==================================================
+   전체 페이지
+================================================== */
+
+.page {
+    width: min(1000px, 100%);
+    margin: auto;
+
+    border: 1px solid #686563;
+
+    background:
+        radial-gradient(
+            circle at 80% 15%,
+            rgba(255,255,255,.055),
+            transparent 25%
+        ),
+        #1d1d1d;
+
+    position: relative;
+
+    padding: 18px;
+}
+
+
+/* 안쪽 테두리 */
+
+.page::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 7px;
+
+    border: 1px solid #3f3f3f;
+
+    pointer-events: none;
+}
+
+
+/* ==================================================
+   상단
+================================================== */
+
+.top {
+    position: relative;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 12px 18px 22px;
+
+    border-bottom: 1px solid #555;
+}
+
+.logo {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 30px;
+
+    letter-spacing: .15em;
+
+    color: #f0eeeb;
+}
+
+.top-right {
+    display: flex;
+
+    gap: 7px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+
+    border: 1px solid #aaa;
+
+    border-radius: 50%;
+}
+
+
+/* ==================================================
+   메인 프로필
+================================================== */
+
+.profile {
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 300px 1fr 180px;
+
+    gap: 25px;
+
+    padding: 35px 25px;
+
+    border-bottom: 1px solid #555;
+}
+
+
+/* ==================================================
+   대표 이미지
+================================================== */
+
+.main-image {
+
+    height: 330px;
+
+    border: 1px solid #777;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: #111;
+}
+
+
+/*
+   실제 이미지 넣을 곳
+
+   예:
+   background-image: url("main.jpg");
+*/
+
+.main-image img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* 이미지가 없을 때 */
+
+.image-placeholder {
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #777;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 24px;
+
+    letter-spacing: .15em;
+}
+
+
+/* 이미지 번호 */
+
+.image-number {
+
+    position: absolute;
+
+    bottom: 10px;
+    right: 12px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 13px;
+
+    color: #aaa;
+}
+
+
+/* ==================================================
+   프로필 텍스트
+================================================== */
+
+.profile-info {
+
+    padding-top: 8px;
+}
+
+.small-title {
+
+    color: #999;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 12px;
+
+    letter-spacing: .22em;
+
+    margin-bottom: 8px;
+}
+
+.name {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(42px, 6vw, 65px);
+
+    font-weight: 400;
+
+    line-height: .9;
+
+    margin-bottom: 18px;
+}
+
+.profile-line {
+
+    height: 1px;
+
+    background: #555;
+
+    width: 100%;
+
+    margin-bottom: 20px;
+}
+
+.profile-text {
+
+    font-size: 13px;
+
+    line-height: 2;
+
+    color: #c3c0be;
+
+    max-width: 390px;
+}
+
+
+/* ==================================================
+   작은 정보
+================================================== */
+
+.profile-meta {
+
+    margin-top: 28px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+}
+
+.meta-box {
+
+    border: 1px solid #555;
+
+    padding: 9px 10px;
+}
+
+.meta-title {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 10px;
+
+    color: #888;
+
+    letter-spacing: .12em;
+}
+
+.meta-value {
+
+    font-size: 11px;
+
+    margin-top: 3px;
+}
+
+
+/* ==================================================
+   링크
+================================================== */
+
+.links {
+
+    border-left: 1px solid #555;
+
+    padding-left: 20px;
+}
+
+.links-title {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 23px;
+
+    margin-bottom: 15px;
+}
+
+.links a {
+
+    display: block;
+
+    padding: 8px 0;
+
+    border-bottom: 1px solid #444;
+
+    color: #d9d5d2;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 14px;
+
+    transition: .2s;
+}
+
+.links a:hover {
+
+    padding-left: 8px;
+
+    color: white;
+}
+
+
+/* ==================================================
+   카테고리
+================================================== */
+
+.collection {
+
+    padding: 35px 25px 30px;
+}
+
+.collection-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+.collection-title h2 {
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 28px;
+
+    font-weight: 400;
+}
+
+.collection-title span {
+
+    flex: 1;
+
+    height: 1px;
+
+    background: #555;
+}
+
+
+/* ==================================================
+   드림 / OC 버튼
+================================================== */
+
+.category-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px;
+}
+
+.category {
+
+    min-height: 190px;
+
+    border: 1px solid #666;
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 25px;
+
+    background: #202020;
+
+    transition:
+        transform .25s,
+        border-color .25s;
+}
+
+.category:hover {
+
+    transform: translateY(-4px);
+
+    border-color: #aaa;
+}
+
+
+/* 큰 배경 숫자 */
+
+.category::after {
+
+    content: attr(data-number);
+
+    position: absolute;
+
+    right: 15px;
+    bottom: -25px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 130px;
+
+    line-height: 1;
+
+    color: rgba(255,255,255,.035);
+}
+
+.category small {
+
+    font-family: "Cormorant Garamond", serif;
+
+    color: #999;
+
+    letter-spacing: .15em;
+
+    font-size: 11px;
+}
+
+.category h3 {
+
+    margin-top: 20px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 46px;
+
+    font-weight: 400;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.category p {
+
+    margin-top: 5px;
+
+    color: #999;
+
+    font-size: 11px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* ==================================================
+   하단
+================================================== */
+
+.bottom {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 20px 25px 12px;
+
+    color: #777;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 11px;
+
+    letter-spacing: .08em;
+}
+
+
+/* ==================================================
+   모바일
+================================================== */
+
+@media (max-width: 750px) {
+
+    body {
+        padding: 12px 8px;
+    }
+
+    .page {
+        padding: 10px;
+    }
+
+    .profile {
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+        padding: 25px 15px;
+    }
+
+    .main-image {
+        height: min(90vw, 400px);
+    }
+
+    .links {
+
+        border-left: none;
+
+        border-top: 1px solid #555;
+
+        padding-left: 0;
+
+        padding-top: 20px;
+    }
+
+    .category-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .collection {
+
+        padding: 30px 15px;
+    }
+
+    .bottom {
+
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+</style>
 </head>
+
 
 <body>
 
-    <!-- HEADER -->
-    <header class="site-header">
 
-        <a href="index.html" class="logo">
-            <span>ARCHIVE</span>
-            <small>personal collection · 20XX</small>
-        </a>
+<div class="page">
 
-        <button class="menu-button">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+
+    <!-- =========================================
+         TOP
+    ========================================== -->
+
+    <header class="top">
+
+        <div class="logo">
+            MY PAGE
+        </div>
+
+        <div class="top-right">
+
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+
+        </div>
 
     </header>
 
 
-    <main>
 
-        <!-- =========================
-             HERO
-        ========================== -->
+    <!-- =========================================
+         PROFILE
+    ========================================== -->
 
-        <section class="hero">
+    <section class="profile">
 
-            <p class="eyebrow">
-                DREAM & ORIGINAL CHARACTER
-            </p>
 
-            <h1>
-                a little archive<br>
-                of <em>them.</em>
-            </h1>
+        <!-- 대표 이미지 -->
 
-            <p class="hero-copy">
-                개인적으로 기록하고 보관하는<br>
-                드림 · 자캐 · 관계성 아카이브
-            </p>
+        <div class="main-image">
 
-            <div class="hero-line">
-                <span></span>
-                <i>✦</i>
-                <span></span>
+            <!--
+                여기에 이미지 넣기
+
+                <img src="main.jpg">
+            -->
+
+            <div class="image-placeholder">
+                IMAGE
             </div>
 
-            <p class="archive-number">
-                ARCHIVE / 001
+            <span class="image-number">
+                01
+            </span>
+
+        </div>
+
+
+
+        <!-- 소개 -->
+
+        <div class="profile-info">
+
+            <p class="small-title">
+                PROFILE
             </p>
 
-        </section>
+            <h1 class="name">
+                YOUR<br>
+                NAME
+            </h1>
+
+            <div class="profile-line"></div>
+
+            <p class="profile-text">
+                여기에 네가 원하는 소개를 적으면 됨.<br>
+                긴 설명을 넣어도 되고,<br>
+                아예 비워둬도 괜찮음.
+            </p>
 
 
+            <div class="profile-meta">
 
-        <!-- =========================
-             CATEGORY
-        ========================== -->
+                <div class="meta-box">
 
-        <section class="category-section">
-
-            <div class="section-heading">
-
-                <p class="section-number">
-                    01
-                </p>
-
-                <div>
-                    <p class="eyebrow">
-                        COLLECTION
+                    <p class="meta-title">
+                        DREAM
                     </p>
 
-                    <h2>
-                        choose an archive
-                    </h2>
+                    <p class="meta-value">
+                        00
+                    </p>
+
+                </div>
+
+                <div class="meta-box">
+
+                    <p class="meta-title">
+                        OC PAIR
+                    </p>
+
+                    <p class="meta-value">
+                        00
+                    </p>
+
                 </div>
 
             </div>
 
+        </div>
 
-            <div class="category-grid">
 
 
-                <!-- DREAM -->
+        <!-- 링크 -->
 
-                <a href="dream.html" class="category-card">
+        <nav class="links">
 
-                    <div class="card-decoration">
-                        ❦
-                    </div>
-
-                    <div class="card-image">
-
-                        <span>
-                            YOUR<br>
-                            IMAGE
-                        </span>
-
-                        <small>
-                            01
-                        </small>
-
-                    </div>
-
-
-                    <div class="card-info">
-
-                        <p class="card-label">
-                            COLLECTION 01
-                        </p>
-
-                        <h3>
-                            DREAM
-                        </h3>
-
-                        <p>
-                            드림주와 드림캐,<br>
-                            그리고 그 사이의 이야기.
-                        </p>
-
-                        <span class="enter">
-                            ENTER →
-                        </span>
-
-                    </div>
-
-                </a>
-
-
-
-                <!-- OC PAIR -->
-
-                <a href="oc.html" class="category-card">
-
-                    <div class="card-decoration">
-                        ✦
-                    </div>
-
-                    <div class="card-image">
-
-                        <span>
-                            YOUR<br>
-                            IMAGE
-                        </span>
-
-                        <small>
-                            02
-                        </small>
-
-                    </div>
-
-
-                    <div class="card-info">
-
-                        <p class="card-label">
-                            COLLECTION 02
-                        </p>
-
-                        <h3>
-                            OC PAIR
-                        </h3>
-
-                        <p>
-                            오리지널 캐릭터와<br>
-                            그들의 관계를 기록하는 곳.
-                        </p>
-
-                        <span class="enter">
-                            ENTER →
-                        </span>
-
-                    </div>
-
-                </a>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             ABOUT
-        ========================== -->
-
-        <section class="intro-section">
-
-            <div class="intro-symbol">
-                †
-            </div>
-
-
-            <div class="intro-text">
-
-                <p class="eyebrow">
-                    ABOUT THIS PLACE
-                </p>
-
-                <blockquote>
-                    “Some things are worth<br>
-                    keeping somewhere quiet.”
-                </blockquote>
-
-                <p>
-                    좋아하는 캐릭터와 관계, 세계관,
-                    그림과 글을<br>
-                    천천히 모아두는 개인적인 기록 공간입니다.
-                </p>
-
-            </div>
-
-
-            <div class="intro-meta">
-
-                <span>
-                    EST. 20XX
-                </span>
-
-                <span>
-                    DREAM / OC
-                </span>
-
-                <span>
-                    PRIVATE ARCHIVE
-                </span>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =========================
-             FOOTER
-        ========================== -->
-
-        <footer class="site-footer">
-
-            <div>
-
-                <span>
-                    ARCHIVE
-                </span>
-
-                <small>
-                    © 20XX — personal use only
-                </small>
-
-            </div>
-
-
-            <div class="footer-ornament">
-                ──────── ✦ ────────
-            </div>
-
-
-            <p>
-                made with affection
+            <p class="links-title">
+                LINKS
             </p>
 
-        </footer>
+            <a href="#">
+                PROFILE
+            </a>
 
-    </main>
+            <a href="#">
+                DREAM
+            </a>
+
+            <a href="#">
+                OC PAIR
+            </a>
+
+            <a href="#">
+                GALLERY
+            </a>
+
+        </nav>
+
+    </section>
+
+
+
+    <!-- =========================================
+         COLLECTION
+    ========================================== -->
+
+    <section class="collection">
+
+
+        <div class="collection-title">
+
+            <h2>
+                COLLECTION
+            </h2>
+
+            <span></span>
+
+        </div>
+
+
+
+        <div class="category-grid">
+
+
+            <!-- DREAM -->
+
+            <a
+                href="dream.html"
+                class="category"
+                data-number="01"
+            >
+
+                <small>
+                    01 / COLLECTION
+                </small>
+
+                <h3>
+                    DREAM
+                </h3>
+
+                <p>
+                    dream pairings
+                </p>
+
+            </a>
+
+
+
+            <!-- OC PAIR -->
+
+            <a
+                href="oc.html"
+                class="category"
+                data-number="02"
+            >
+
+                <small>
+                    02 / COLLECTION
+                </small>
+
+                <h3>
+                    OC PAIR
+                </h3>
+
+                <p>
+                    original character pairings
+                </p>
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer class="bottom">
+
+        <span>
+            20XX
+        </span>
+
+        <span>
+            © YOUR NAME
+        </span>
+
+    </footer>
+
+
+</div>
+
 
 </body>
 </html>
