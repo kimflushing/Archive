@@ -3,18 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>DREAM 01</title>
+<title>DREAM 01 — WANDERER × LUCIANO</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Nanum+Myeongjo:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
 * {
     box-sizing: border-box;
 }
 
-html,
-body {
+html, body {
     margin: 0;
     padding: 0;
     min-height: 100%;
@@ -22,109 +20,208 @@ body {
 
 body {
     background:
-        repeating-linear-gradient(
-            135deg,
-            #080709 0px,
-            #080709 18px,
-            #0d090d 19px,
-            #0d090d 20px
-        );
-    color: #eee5ed;
-    font-family: "Nanum Myeongjo", serif;
-    font-size: 11px;
-    letter-spacing: 0.2px;
+        radial-gradient(circle at 20% 20%, rgba(190,130,190,.08), transparent 25%),
+        radial-gradient(circle at 80% 70%, rgba(220,150,210,.06), transparent 25%),
+        #08070a;
+    color: #eadce9;
+    font-family: "IBM Plex Mono", monospace;
+    overflow-x: hidden;
 }
 
-/* 전체 페이지 */
+/* =========================
+   BACKGROUND SYMBOLS
+========================= */
+
+.floating-symbols {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.symbol {
+    position: absolute;
+    color: rgba(220, 166, 218, .28);
+    font-size: 10px;
+    animation: floatSymbol linear infinite;
+    white-space: nowrap;
+}
+
+.s1 { left: 7%;  top: 18%; animation-duration: 14s; animation-delay: -4s; }
+.s2 { left: 18%; top: 72%; animation-duration: 19s; animation-delay: -11s; }
+.s3 { left: 31%; top: 34%; animation-duration: 16s; animation-delay: -7s; }
+.s4 { left: 46%; top: 83%; animation-duration: 22s; animation-delay: -15s; }
+.s5 { left: 61%; top: 16%; animation-duration: 18s; animation-delay: -5s; }
+.s6 { left: 73%; top: 55%; animation-duration: 15s; animation-delay: -9s; }
+.s7 { left: 86%; top: 27%; animation-duration: 20s; animation-delay: -12s; }
+.s8 { left: 94%; top: 78%; animation-duration: 17s; animation-delay: -3s; }
+.s9 { left: 12%; top: 48%; animation-duration: 23s; animation-delay: -18s; }
+.s10 { left: 55%; top: 43%; animation-duration: 21s; animation-delay: -10s; }
+.s11 { left: 38%; top: 10%; animation-duration: 17s; animation-delay: -6s; }
+.s12 { left: 80%; top: 88%; animation-duration: 24s; animation-delay: -20s; }
+
+@keyframes floatSymbol {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: .12;
+    }
+
+    25% {
+        transform: translate(8px, -12px) rotate(20deg);
+        opacity: .32;
+    }
+
+    50% {
+        transform: translate(-7px, -20px) rotate(-10deg);
+        opacity: .16;
+    }
+
+    75% {
+        transform: translate(10px, -8px) rotate(15deg);
+        opacity: .3;
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: .12;
+    }
+}
+
+/* =========================
+   MOBILE WINDOW SCALE
+========================= */
+
+.window-stage {
+    position: relative;
+    z-index: 2;
+    width: 650px;
+    margin: 45px auto 70px;
+}
 
 .page {
-    width: min(620px, calc(100% - 30px));
-    margin: 70px auto;
-    padding: 12px;
-
-    background: rgba(7, 6, 8, 0.94);
-
-    border: 1px solid rgba(224, 170, 211, 0.7);
-
+    width: 650px;
+    background:
+        linear-gradient(rgba(255,255,255,.012), rgba(255,255,255,.012)),
+        #0b090c;
+    border: 1px solid rgba(225,170,220,.62);
     box-shadow:
-        0 0 8px rgba(219, 139, 202, 0.18),
-        0 0 25px rgba(219, 139, 202, 0.08);
+        0 0 0 1px rgba(80,50,80,.5),
+        0 0 35px rgba(190,110,190,.10);
 }
 
-/* 안쪽 프레임 */
+/* =========================
+   WINDOW BAR
+========================= */
+
+.window-bar {
+    height: 27px;
+    border-bottom: 1px solid rgba(225,170,220,.4);
+    display: flex;
+    align-items: center;
+    padding: 0 9px;
+    font-size: 8px;
+    color: #bca8ba;
+    letter-spacing: .08em;
+}
+
+.window-dots {
+    display: flex;
+    gap: 5px;
+    margin-right: 10px;
+}
+
+.window-dots span {
+    width: 6px;
+    height: 6px;
+    border: 1px solid #d9a9d3;
+    border-radius: 50%;
+    display: block;
+}
+
+.window-title {
+    flex: 1;
+}
+
+.window-close {
+    color: #c9a9c5;
+}
+
+/* =========================
+   INNER FRAME
+========================= */
 
 .inner {
-    border: 1px solid rgba(190, 145, 183, 0.35);
-    padding: 18px;
+    margin: 10px;
+    border: 1px solid rgba(225,170,220,.27);
 }
 
-/* 상단 */
+/* =========================
+   HEADER
+========================= */
 
-.top {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-
-    padding-bottom: 12px;
-    border-bottom: 1px solid rgba(220, 171, 208, 0.35);
+.header {
+    padding: 20px 20px 15px;
+    text-align: center;
+    border-bottom: 1px solid rgba(225,170,220,.28);
 }
 
 .title {
+    margin: 0;
     font-family: "Cormorant Garamond", serif;
-    font-size: 22px;
-    letter-spacing: 4px;
-    color: #e8bfdc;
+    font-size: 27px;
+    font-weight: 500;
+    letter-spacing: .14em;
+    color: #f1d9ee;
 }
 
 .subtitle {
-    font-family: "Cormorant Garamond", serif;
-    font-size: 10px;
-    letter-spacing: 2px;
-    color: #9d899c;
+    margin-top: 4px;
+    font-size: 8px;
+    letter-spacing: .18em;
+    color: #9e829c;
 }
 
-/* 메뉴 */
+/* =========================
+   MENU
+========================= */
 
 .menu {
     display: flex;
     justify-content: center;
-    gap: 20px;
-
-    padding: 13px 0;
-
-    border-bottom: 1px solid rgba(220, 171, 208, 0.25);
+    flex-wrap: wrap;
+    border-bottom: 1px solid rgba(225,170,220,.28);
 }
 
 .menu button {
-    appearance: none;
     border: 0;
-    background: none;
-
-    padding: 0;
-
-    color: #9d899c;
-
-    font-family: "Cormorant Garamond", serif;
-    font-size: 11px;
-    letter-spacing: 1.5px;
-
+    border-right: 1px solid rgba(225,170,220,.2);
+    background: transparent;
+    color: #927b91;
+    padding: 9px 11px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 8px;
+    letter-spacing: .06em;
     cursor: pointer;
+}
 
-    transition: color 0.2s ease;
+.menu button:last-child {
+    border-right: 0;
 }
 
 .menu button:hover,
 .menu button.active {
-    color: #e9b9da;
+    color: #f1cdea;
+    background: rgba(225,170,220,.055);
 }
 
-/* 콘텐츠 */
+/* =========================
+   CONTENT
+========================= */
 
 .content {
-    padding: 22px 8px 10px;
+    padding: 19px;
 }
-
-/* 각 섹션 */
 
 .section {
     display: none;
@@ -134,189 +231,239 @@ body {
     display: block;
 }
 
-/* MAIN */
+.section-title {
+    margin: 0 0 12px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: #e7cde4;
+    letter-spacing: .08em;
+}
+
+.section-subtitle {
+    margin: -7px 0 15px;
+    font-size: 7px;
+    color: #806d7e;
+    letter-spacing: .12em;
+}
+
+/* =========================
+   MAIN
+========================= */
 
 .main-image {
     width: 100%;
-    max-height: 330px;
-
+    height: 270px;
     object-fit: cover;
-
     display: block;
-
-    border: 1px solid rgba(220, 171, 208, 0.45);
+    border: 1px solid rgba(225,170,220,.25);
+    margin-bottom: 17px;
 }
 
-.main-text {
-    margin-top: 22px;
-
-    padding: 18px 15px;
-
-    border-left: 1px solid rgba(220, 171, 208, 0.65);
-
-    color: #ded2dc;
-
-    line-height: 2;
-    font-size: 11px;
+.poem {
+    border-left: 1px solid rgba(225,170,220,.55);
+    padding: 4px 0 4px 15px;
+    color: #cdbbc9;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 15px;
+    line-height: 1.75;
 }
 
-.main-text p {
-    margin: 0 0 10px;
+.poem p {
+    margin: 0;
 }
 
-.main-text p:last-child {
-    margin-bottom: 0;
-}
-
-/* 캐릭터 페이지 */
+/* =========================
+   CHARACTER
+========================= */
 
 .character-layout {
     display: grid;
     grid-template-columns: 180px 1fr;
-    gap: 22px;
-
+    gap: 17px;
     align-items: start;
 }
 
 .character-image {
     width: 180px;
-    height: 300px;
-
+    height: 260px;
     object-fit: cover;
-
-    border: 1px solid rgba(220, 171, 208, 0.45);
+    object-position: center;
+    border: 1px solid rgba(225,170,220,.35);
+    display: block;
 }
 
-.character-info {
+.info {
     min-width: 0;
 }
 
-/* 정보 항목 */
-
 .info-block {
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
-.info-title {
+.info-label {
+    color: #d6a9d0;
+    font-size: 8px;
+    letter-spacing: .12em;
     margin-bottom: 4px;
-
-    color: #dca9ce;
-
-    font-family: "Cormorant Garamond", serif;
-    font-size: 12px;
-    letter-spacing: 1.8px;
 }
 
 .info-text {
-    margin: 0;
-
-    color: #d7cbd5;
-
-    font-size: 10px;
-    line-height: 1.8;
+    color: #aaa0aa;
+    font-size: 8px;
+    line-height: 1.75;
 }
 
-/* WORLD */
+/* =========================
+   WORLD / RELATIONSHIP
+========================= */
 
-.simple-box {
-    padding: 18px;
-
-    border: 1px solid rgba(220, 171, 208, 0.3);
-
-    color: #d7cbd5;
-
-    font-size: 11px;
-    line-height: 2;
+.text-box {
+    border: 1px solid rgba(225,170,220,.25);
+    padding: 15px;
+    color: #aaa0aa;
+    font-size: 8px;
+    line-height: 1.9;
 }
 
-.simple-title {
-    margin-bottom: 12px;
-
-    color: #dca9ce;
-
+.text-box strong {
+    display: block;
+    color: #d9b4d5;
     font-family: "Cormorant Garamond", serif;
-    font-size: 15px;
-    letter-spacing: 2px;
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 7px;
 }
 
-/* RELATIONSHIP */
-
-.relationship {
-    padding: 20px;
-
-    border-top: 1px solid rgba(220, 171, 208, 0.35);
-    border-bottom: 1px solid rgba(220, 171, 208, 0.35);
-
-    color: #d9cdd7;
-
-    font-size: 11px;
-    line-height: 2;
+.progression {
+    margin-top: 14px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(225,170,220,.2);
+    color: #cda8c9;
+    letter-spacing: .03em;
 }
 
-.relationship p {
-    margin: 0 0 12px;
+/* =========================
+   COMMISSION
+========================= */
+
+.commission-note {
+    color: #877485;
+    font-size: 7px;
+    margin-bottom: 12px;
 }
 
-.relationship p:last-child {
-    margin-bottom: 0;
+.commission-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
 }
 
-/* 하단 */
+.commission-item {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    border: 1px solid rgba(225,170,220,.25);
+    background: #100d11;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.commission-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: opacity .2s ease;
+}
+
+.commission-item:hover img {
+    opacity: .72;
+}
+
+.commission-number {
+    position: absolute;
+    left: 5px;
+    bottom: 4px;
+    font-size: 7px;
+    color: #e0c1dc;
+    background: rgba(8,7,10,.75);
+    padding: 2px 4px;
+}
+
+/* =========================
+   FOOTER
+========================= */
 
 .footer {
-    margin-top: 20px;
-    padding-top: 10px;
-
-    border-top: 1px solid rgba(220, 171, 208, 0.2);
-
+    border-top: 1px solid rgba(225,170,220,.22);
+    padding: 10px;
     text-align: center;
-
-    color: #655a65;
-
-    font-family: "Cormorant Garamond", serif;
-    font-size: 10px;
-    letter-spacing: 2px;
+    color: #695867;
+    font-size: 7px;
+    letter-spacing: .08em;
 }
 
-/* 모바일 */
+/* =========================
+   LIGHTBOX
+========================= */
 
-@media (max-width: 600px) {
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(5,4,7,.92);
+    padding: 30px;
+}
+
+.lightbox.show {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 90vw;
+    max-height: 88vh;
+    object-fit: contain;
+    border: 1px solid rgba(225,170,220,.5);
+    box-shadow: 0 0 35px rgba(210,130,205,.15);
+}
+
+.close-lightbox {
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    color: #e7cde4;
+    font-size: 18px;
+    cursor: pointer;
+    font-family: "IBM Plex Mono", monospace;
+}
+
+/* =========================
+   MOBILE
+   KEEP DESKTOP WINDOW
+========================= */
+
+@media (max-width: 670px) {
+
+    body {
+        min-width: 0;
+    }
+
+    .window-stage {
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    /*
+      내부 페이지는 650px 고정.
+      JS가 화면 폭에 맞춰 전체 창을 축소하므로
+      모바일에서도 레이아웃 자체는 데스크톱과 동일함.
+    */
 
     .page {
-        width: calc(100% - 18px);
-        margin: 25px auto;
-    }
-
-    .inner {
-        padding: 13px;
-    }
-
-    .top {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 3px;
-    }
-
-    .menu {
-        gap: 10px;
-        flex-wrap: wrap;
-    }
-
-    .menu button {
-        font-size: 10px;
-    }
-
-    .character-layout {
-        grid-template-columns: 1fr;
-    }
-
-    .character-image {
-        width: 100%;
-        height: 320px;
-    }
-
-    .main-image {
-        max-height: 280px;
+        transform-origin: top left;
     }
 }
 </style>
@@ -324,298 +471,792 @@ body {
 
 <body>
 
-<div class="page">
-
-    <div class="inner">
-
-        <!-- HEADER -->
-        <header class="top">
-            <div class="title">DREAM 01</div>
-            <div class="subtitle">WANDERER × LUCIANO</div>
-        </header>
-
-
-        <!-- MENU -->
-        <nav class="menu">
-
-            <button class="active" onclick="showSection('main', this)">
-                MAIN
-            </button>
-
-            <button onclick="showSection('oc', this)">
-                OC
-            </button>
-
-            <button onclick="showSection('canon', this)">
-                CANON
-            </button>
-
-            <button onclick="showSection('world', this)">
-                WORLD
-            </button>
-
-            <button onclick="showSection('relationship', this)">
-                RELATIONSHIP
-            </button>
-
-        </nav>
+<!-- 움직이는 배경 문양 -->
+<div class="floating-symbols" aria-hidden="true">
+    <span class="symbol s1">✦</span>
+    <span class="symbol s2">·</span>
+    <span class="symbol s3">✧</span>
+    <span class="symbol s4">+</span>
+    <span class="symbol s5">⋆</span>
+    <span class="symbol s6">·</span>
+    <span class="symbol s7">✦</span>
+    <span class="symbol s8">+</span>
+    <span class="symbol s9">✧</span>
+    <span class="symbol s10">·</span>
+    <span class="symbol s11">⋆</span>
+    <span class="symbol s12">✦</span>
+</div>
 
 
-        <!-- CONTENT -->
-        <main class="content">
+<!-- 모바일에서도 하나의 작은 데스크톱 창처럼 보이게 하는 영역 -->
+<div class="window-stage" id="windowStage">
+
+    <main class="page" id="page">
+
+        <!-- 창 제목 표시줄 -->
+        <div class="window-bar">
+            <div class="window-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="window-title">
+                dream01.html
+            </div>
+
+            <div class="window-close">
+                ×
+            </div>
+        </div>
 
 
-            <!-- ================= MAIN ================= -->
+        <div class="inner">
 
-            <section id="main" class="section active">
-
-                <img
-                    src="dream01.JPG"
-                    alt="Wanderer and Luciano"
-                    class="main-image"
-                >
-
-                <div class="main-text">
-
-                    <p>
-                        너와 나는 우리보다 더 끈끈한 소리로 엉키길 원했어
-                    </p>
-
-                    <p>
-                        아, 소리 내면 그거, 하고<br>
-                        튀어 오르는 음성이 있었지
-                    </p>
-
-                    <p>
-                        있잖아, 혹시 사랑했어?
-                    </p>
-
-                    <p>
-                        시선은 서로를 목격자로 지목해 우중충한 증인대에 세워놓고<br>
-                        더 철저히. 서로를. 열렬히 속이기 위해 손가락질해
-                    </p>
-
-                </div>
-
-            </section>
+            <!-- HEADER -->
+            <header class="header">
+                <h1 class="title">DREAM 01</h1>
+                <div class="subtitle">WANDERER × LUCIANO</div>
+            </header>
 
 
-            <!-- ================= OC ================= -->
+            <!-- MENU -->
+            <nav class="menu">
 
-            <section id="oc" class="section">
+                <button class="active"
+                        onclick="showSection('main', this)">
+                    MAIN
+                </button>
 
-                <div class="character-layout">
+                <button onclick="showSection('oc', this)">
+                    OC
+                </button>
 
-                    <img
-                        src="oc01.jpg"
-                        alt="Luciano"
-                        class="character-image"
-                    >
+                <button onclick="showSection('canon', this)">
+                    CANON
+                </button>
 
-                    <div class="character-info">
+                <button onclick="showSection('world', this)">
+                    WORLD
+                </button>
 
-                        <div class="info-block">
-                            <div class="info-title">PROFILE</div>
-                            <p class="info-text">
-                                수메르에 정착해 살아가는 영생에 가까운 존재. 1월 7일생, 얼음 원소 법구 사용자.<br>
-                                현재는 영혼의 안내자로 살아가며, 정확한 고향은 없지만 팔려간 이후 이나즈마를 고향이라 부른다.
-                            </p>
-                        </div>
+                <button onclick="showSection('relationship', this)">
+                    RELATIONSHIP
+                </button>
 
-                        <div class="info-block">
-                            <div class="info-title">APPEARANCE</div>
-                            <p class="info-text">
-                                수수하면서도 아름다운 외모, 금안과 붉은 입술을 지녔다. 왼쪽 눈 아래에는 나비 모양의 흉터가 있다.<br>
-                                오른쪽 뺨에는 신의 벌로 새겨진 지워지지 않는 꽃 모양의 죄인 문양이 있다.
-                            </p>
-                        </div>
+                <button onclick="showSection('commission', this)">
+                    COMMISSION
+                </button>
 
-                        <div class="info-block">
-                            <div class="info-title">PERSONALITY</div>
-                            <p class="info-text">
-                                소심하고 느긋하며 과묵한 편으로, 낯을 심하게 가리고 감정적으로 쉽게 흔들린다.<br>
-                                다정하고 이타적이지만 자신을 낮게 여기며, 타인에게 상처 주는 것을 극도로 꺼린다.
-                            </p>
-                        </div>
-
-                        <div class="info-block">
-                            <div class="info-title">LIKES</div>
-                            <p class="info-text">
-                                소동물과 방랑자를 좋아하며, 좋아하는 음식은 꽃크림스튜.<br>
-                                특히 친밀한 사람 앞에서는 평소보다 쉽게 웃고 편하게 대한다.
-                            </p>
-                        </div>
-
-                        <div class="info-block">
-                            <div class="info-title">ETC</div>
-                            <p class="info-text">
-                                체구는 방랑자보다 조금 작으며 저체중을 유지하고 있다.<br>
-                                귀가 약해 큰 소리에 취약하다.
-                            </p>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </section>
+            </nav>
 
 
-            <!-- ================= CANON ================= -->
+            <!-- CONTENT -->
+            <div class="content">
 
-            <section id="canon" class="section">
 
-                <div class="character-layout">
+                <!-- ================= MAIN ================= -->
+
+                <section id="main" class="section active">
+
+                    <h2 class="section-title">
+                        MAIN
+                    </h2>
 
                     <img
-                        src="canon01.JPG"
-                        alt="Wanderer"
-                        class="character-image"
+                        src="dream01.JPG"
+                        class="main-image"
+                        alt="DREAM 01"
                     >
 
-                    <div class="character-info">
+                    <div class="poem">
 
-                        <div class="info-block">
-                            <div class="info-title">PROFILE</div>
-                            <p class="info-text">
-                                수메르에서 살아가는 인형의 몸을 가진 존재. 과거에는 가부키모노와 쿠니쿠즈시라는 이름으로 살아왔다.<br>
-                                현재는 ‘방랑자’라는 이름으로 떠돌며 자신만의 길을 걷고 있다. 1월 3일생. 현재는 모자라는 가명을 쓰고있긴하다.
-                            </p>
-                        </div>
+                        <p>
+                            너와 나는 우리보다 더 끈끈한 소리로 엉키길 원했어
+                        </p>
 
-                        <div class="info-block">
-                            <div class="info-title">APPEARANCE</div>
-                            <p class="info-text">
-                                짙은 남색의 머리카락과 보랏빛 눈을 지녔으며, 가늘고 날렵한 체격이다.<br>
-                                커다란 모자와 푸른 계열의 의상을 착용하고 있다.
-                            </p>
-                        </div>
+                        <p>
+                            아, 소리 내면 그거, 하고
+                        </p>
 
-                        <div class="info-block">
-                            <div class="info-title">PERSONALITY</div>
-                            <p class="info-text">
-                                냉소적이고 까칠하며 직설적인 성격으로, 타인에게 쉽게 마음을 열지 않는다.<br>
-                                하지만 자신이 인정한 상대에게는 깊은 신뢰를 보이며, 감정을 쉽게 드러내지 않는다.
-                            </p>
-                        </div>
+                        <p>
+                            튀어 오르는 음성이 있었지
+                        </p>
 
-                        <div class="info-block">
-                            <div class="info-title">LIKES</div>
-                            <p class="info-text">
-                                혼자 있는 시간과 조용한 장소를 선호하며, 불필요하게 사람들과 얽히는 것을 좋아하지 않는다.<br>
-                                루치아노와 함께할 때는 평소보다 편안한 모습을 보인다.
-                            </p>
-                        </div>
+                        <p>
+                            있잖아, 혹시 사랑했어?
+                        </p>
 
-                        <div class="info-block">
-                            <div class="info-title">ETC</div>
-                            <p class="info-text">
-                                인간이 아닌 인형의 몸을 지닌 존재로, 인간과는 다른 신체적 특성을 가지고 있다.<br>
-                                가부키모노였던 시절부터 루치아노와 오랜 시간을 함께해왔다.
-                            </p>
+                        <p>
+                            시선은 서로를 목격자로 지목해 우중충한 증인대에 세워놓고 더 철저히. 서로를. 열렬히 속이기 위해 손가락질해
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ================= OC ================= -->
+
+                <section id="oc" class="section">
+
+                    <h2 class="section-title">
+                        OC
+                    </h2>
+
+                    <div class="section-subtitle">
+                        루치아노 / LUCIANO
+                    </div>
+
+
+                    <div class="character-layout">
+
+                        <img
+                            src="oc01.JPG"
+                            class="character-image"
+                            alt="루치아노"
+                        >
+
+
+                        <div class="info">
+
+                            <div class="info-block">
+
+                                <div class="info-label">
+                                    PROFILE
+                                </div>
+
+                                <div class="info-text">
+                                    수메르에 정착해 살아가는 영생에 가까운 존재. 1월 7일생, 얼음 원소 법구 사용자.
+                                    현재는 영혼의 안내자로 살아가며, 고향은 없지만 팔려간 이후 이나즈마를 고향이라 부른다.
+                                </div>
+
+                            </div>
+
+
+                            <div class="info-block">
+
+                                <div class="info-label">
+                                    APPEARANCE
+                                </div>
+
+                                <div class="info-text">
+                                    수수하면서도 아름다운 외모, 금안과 붉은 입술을 지녔다. 왼쪽 눈 아래에는 나비 모양의 흉터가 있다.
+                                    오른쪽 뺨에는 신의 벌로 새겨진 지워지지 않는 꽃 모양의 죄인 문양이 있다.
+                                </div>
+
+                            </div>
+
+
+                            <div class="info-block">
+
+                                <div class="info-label">
+                                    PERSONALITY
+                                </div>
+
+                                <div class="info-text">
+                                    소심하고 느긋하며 과묵한 편으로, 낯을 심하게 가리고 감정적으로 쉽게 흔들린다.
+                                    다정하고 이타적이지만 자신을 낮게 여기며, 타인에게 상처 주는 것을 극도로 꺼린다.
+                                </div>
+
+                            </div>
+
+
+                            <div class="info-block">
+
+                                <div class="info-label">
+                                    LIKES
+                                </div>
+
+                                <div class="info-text">
+                                    소동물과 방랑자를 좋아하며, 좋아하는 음식은 꽃크림스튜.
+                                    특히 친밀한 사람 앞에서는 평소보다 쉽게 웃고 편하게 대한다.
+                                </div>
+
+                            </div>
+
+
+                            <div class="info-block">
+
+                                <div class="info-label">
+                                    ETC
+                                </div>
+
+                                <div class="info-text">
+                                    체구는 방랑자보다 조금 작으며 저체중을 유지하고 있다.
+                                    귀가 약해 큰 소리에 취약하다.
+                                </div>
+
+                            </div>
+
                         </div>
 
                     </div>
 
-                </div>
-
-            </section>
+                </section>
 
 
-            <!-- ================= WORLD ================= -->
+                <!-- ================= CANON ================= -->
 
-            <section id="world" class="section">
+                <section id="canon" class="section">
 
-                <div class="simple-box">
+                    <h2 class="section-title">
+                        CANON
+                    </h2>
 
-                    <div class="simple-title">
-                        TEYVAT
+                    <div class="section-subtitle">
+                        방랑자 / WANDERER
                     </div>
 
-                    티바트는 일곱 원소와 일곱 신을 중심으로 여러 국가와 문명이 존재하는 세계다.<br>
-                    몬드, 리월, 이나즈마, 수메르 등을 비롯한 각 지역은 서로 다른 문화와 역사를 지니고 있다.<br>
-                    신의 눈과 원소의 힘이 사람들의 삶에 깊게 관여하며, 여행자는 각국의 사건과 숨겨진 역사를 마주한다.
 
-                </div>
+                    <div class="character-layout">
 
-            </section>
-
-
-            <!-- ================= RELATIONSHIP ================= -->
-
-            <section id="relationship" class="section">
-
-                <div class="simple-title">
-                    WANDERER × LUCIANO
-                </div>
-
-                <div class="relationship">
-
-                    <p>
-                        가부키모노였던 시절부터 함께해온 사이로,
-                        오랜 시간 서로를 의지하며 평생을 약속한 유일한 관계.
-                    </p>
-
-                    <p>
-                        친구로 시작한 긴 우정은 어느 순간부터
-                        서로를 향한 특별한 감정으로 변해가기 시작했다.
-                    </p>
-
-                    <p>
-                        서로를 사랑하고 있음에도 관계가 깨질까 두려워
-                        쉽게 마음을 꺼내지 못한 채, 일방적인 짝사랑처럼 감정을 품고 있다.
-                    </p>
-
-                    <p>
-                        친구 → 썸 → 짝사랑 → 쌍방
-                    </p>
-
-                </div>
-
-            </section>
+                        <img
+                            src="canon01.JPG"
+                            class="character-image"
+                            alt="방랑자"
+                        >
 
 
-        </main>
+                        <div class="info">
+
+                            <div class="info-block">
+
+                                <div class="info-label">
+                                    PROFILE
+                                </div>
+
+                                <div class="info-text">
+                                    수메르에서 살아가는 인형의 몸을 가진 존재. 과거에는 가부키모노와 쿠니쿠즈시라는 이름으로 살아왔다.
+                                    현재는 ‘방랑자’라는 이름으로 떠돌며 자신만의 길을 걷고 있다.
+                                </div>
+
+                            </div>
 
 
-        <footer class="footer">
-            WANDERER / LUCIANO
-        </footer>
+                            <div class="info-block">
 
+                                <div class="info-label">
+                                    APPEARANCE
+                                </div>
+
+                                <div class="info-text">
+                                    짙은 남색의 머리카락과 보랏빛 눈을 지녔으며, 가늘고 날렵한 체격이다.
+                                    커다란 모자와 푸른 계열의 의상을 착용하고 있다.
+                                </div>
+
+                            </div>
+
+
+                            <div class="info-block">
+
+                                <div class="info-label">
+                                    PERSONALITY
+                                </div>
+
+                                <div class="info-text">
+                                    냉소적이고 까칠하며 직설적인 성격으로, 타인에게 쉽게 마음을 열지 않는다.
+                                    하지만 자신이 인정한 상대에게는 깊은 신뢰를 보이며, 감정을 쉽게 드러내지 않는다.
+                                </div>
+
+                            </div>
+
+
+                            <div class="info-block">
+
+                                <div class="info-label">
+                                    LIKES
+                                </div>
+
+                                <div class="info-text">
+                                    혼자 있는 시간과 조용한 장소를 선호하며, 불필요하게 사람들과 얽히는 것을 좋아하지 않는다.
+                                    루치아노와 함께할 때는 평소보다 편안한 모습을 보인다.
+                                </div>
+
+                            </div>
+
+
+                            <div class="info-block">
+
+                                <div class="info-label">
+                                    ETC
+                                </div>
+
+                                <div class="info-text">
+                                    인간이 아닌 인형의 몸을 지닌 존재로, 인간과는 다른 신체적 특성을 가지고 있다.
+                                    가부키모노였던 시절부터 루치아노와 오랜 시간을 함께해왔다.
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ================= WORLD ================= -->
+
+                <section id="world" class="section">
+
+                    <h2 class="section-title">
+                        WORLD
+                    </h2>
+
+
+                    <div class="text-box">
+
+                        <strong>TEYVAT</strong>
+
+                        티바트는 일곱 원소와 일곱 신을 중심으로 여러 국가와 문명이 존재하는 세계다.
+                        몬드, 리월, 이나즈마, 수메르 등을 비롯한 각 지역은 서로 다른 문화와 역사를 지니고 있다.
+                        신의 눈과 원소의 힘이 사람들의 삶에 깊게 관여하며, 여행자는 각국의 사건과 숨겨진 역사를 마주한다.
+
+                    </div>
+
+                </section>
+
+
+                <!-- ================= RELATIONSHIP ================= -->
+
+                <section id="relationship" class="section">
+
+                    <h2 class="section-title">
+                        RELATIONSHIP
+                    </h2>
+
+
+                    <div class="text-box">
+
+                        <strong>WANDERER × LUCIANO</strong>
+
+                        가부키모노였던 시절부터 함께해온 사이로, 오랜 시간 서로를 의지하며 평생을 약속한 유일한 관계.
+                        친구로 시작한 긴 우정은 어느 순간부터 서로를 향한 특별한 감정으로 변해가기 시작했다.
+                        서로를 사랑하고 있음에도 관계가 깨질까 두려워 쉽게 마음을 꺼내지 못한 채, 일방적인 짝사랑처럼 감정을 품고 있다.
+
+                        <div class="progression">
+                            친구 → 썸 → 짝사랑 → 쌍방
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- ================= COMMISSION ================= -->
+
+                <section id="commission" class="section">
+
+                    <h2 class="section-title">
+                        COMMISSION
+                    </h2>
+
+                    <div class="commission-note">
+                        commission backup / 01 — 13
+                    </div>
+
+
+                    <div class="commission-grid">
+
+
+                        <div class="commission-item"
+                             onclick="openImage('commission01.JPG')">
+
+                            <img
+                                src="commission01.JPG"
+                                alt="Commission 01"
+                                onerror="this.style.display='none'"
+                            >
+
+                            <span class="commission-number">
+                                01
+                            </span>
+
+                        </div>
+
+
+                        <div class="commission-item"
+                             onclick="openImage('commission02.JPG')">
+
+                            <img
+                                src="commission02.JPG"
+                                alt="Commission 02"
+                                onerror="this.style.display='none'"
+                            >
+
+                            <span class="commission-number">
+                                02
+                            </span>
+
+                        </div>
+
+
+                        <div class="commission-item"
+                             onclick="openImage('commission03.JPG')">
+
+                            <img
+                                src="commission03.JPG"
+                                alt="Commission 03"
+                                onerror="this.style.display='none'"
+                            >
+
+                            <span class="commission-number">
+                                03
+                            </span>
+
+                        </div>
+
+
+                        <div class="commission-item"
+                             onclick="openImage('commission04.JPG')">
+
+                            <img
+                                src="commission04.JPG"
+                                alt="Commission 04"
+                                onerror="this.style.display='none'"
+                            >
+
+                            <span class="commission-number">
+                                04
+                            </span>
+
+                        </div>
+
+
+                        <div class="commission-item"
+                             onclick="openImage('commission05.JPG')">
+
+                            <img
+                                src="commission05.JPG"
+                                alt="Commission 05"
+                                onerror="this.style.display='none'"
+                            >
+
+                            <span class="commission-number">
+                                05
+                            </span>
+
+                        </div>
+
+
+                        <div class="commission-item"
+                             onclick="openImage('commission06.JPG')">
+
+                            <img
+                                src="commission06.JPG"
+                                alt="Commission 06"
+                                onerror="this.style.display='none'"
+                            >
+
+                            <span class="commission-number">
+                                06
+                            </span>
+
+                        </div>
+
+
+                        <div class="commission-item"
+                             onclick="openImage('commission07.JPG')">
+
+                            <img
+                                src="commission07.JPG"
+                                alt="Commission 07"
+                                onerror="this.style.display='none'"
+                            >
+
+                            <span class="commission-number">
+                                07
+                            </span>
+
+                        </div>
+
+
+                        <div class="commission-item"
+                             onclick="openImage('commission08.JPG')">
+
+                            <img
+                                src="commission08.JPG"
+                                alt="Commission 08"
+                                onerror="this.style.display='none'"
+                            >
+
+                            <span class="commission-number">
+                                08
+                            </span>
+
+                        </div>
+
+
+                        <div class="commission-item"
+                             onclick="openImage('commission09.JPG')">
+
+                            <img
+                                src="commission09.JPG"
+                                alt="Commission 09"
+                                onerror="this.style.display='none'"
+                            >
+
+                            <span class="commission-number">
+                                09
+                            </span>
+
+                        </div>
+
+
+                        <div class="commission-item"
+                             onclick="openImage('commission10.JPG')">
+
+                            <img
+                                src="commission10.JPG"
+                                alt="Commission 10"
+                                onerror="this.style.display='none'"
+                            >
+
+                            <span class="commission-number">
+                                10
+                            </span>
+
+                        </div>
+
+
+                        <div class="commission-item"
+                             onclick="openImage('commission11.JPG')">
+
+                            <img
+                                src="commission11.JPG"
+                                alt="Commission 11"
+                                onerror="this.style.display='none'"
+                            >
+
+                            <span class="commission-number">
+                                11
+                            </span>
+
+                        </div>
+
+
+                        <div class="commission-item"
+                             onclick="openImage('commission12.JPG')">
+
+                            <img
+                                src="commission12.JPG"
+                                alt="Commission 12"
+                                onerror="this.style.display='none'"
+                            >
+
+                            <span class="commission-number">
+                                12
+                            </span>
+
+                        </div>
+
+
+                        <div class="commission-item"
+                             onclick="openImage('commission13.JPG')">
+
+                            <img
+                                src="commission13.JPG"
+                                alt="Commission 13"
+                                onerror="this.style.display='none'"
+                            >
+
+                            <span class="commission-number">
+                                13
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+                </section>
+
+            </div>
+
+
+            <footer class="footer">
+                DREAM ARCHIVE · 01
+            </footer>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- ================= LIGHTBOX ================= -->
+
+<div
+    class="lightbox"
+    id="lightbox"
+    onclick="closeImage()"
+>
+
+    <div
+        class="close-lightbox"
+        onclick="closeImage()"
+    >
+        ×
     </div>
+
+    <img
+        id="lightboxImage"
+        src=""
+        alt=""
+        onclick="event.stopPropagation()"
+    >
 
 </div>
 
 
 <script>
 
+/* =========================
+   TAB
+========================= */
+
 function showSection(sectionId, button) {
 
-    // 모든 섹션 숨기기
-    const sections = document.querySelectorAll('.section');
+    const sections =
+        document.querySelectorAll(".section");
 
     sections.forEach(section => {
-        section.classList.remove('active');
+        section.classList.remove("active");
     });
 
+    const target =
+        document.getElementById(sectionId);
 
-    // 선택한 섹션 보이기
-    const selected = document.getElementById(sectionId);
-
-    if (selected) {
-        selected.classList.add('active');
+    if (target) {
+        target.classList.add("active");
     }
 
-
-    // 메뉴 active 상태 변경
-    const buttons = document.querySelectorAll('.menu button');
+    const buttons =
+        document.querySelectorAll(".menu button");
 
     buttons.forEach(btn => {
-        btn.classList.remove('active');
+        btn.classList.remove("active");
     });
 
-    button.classList.add('active');
+    if (button) {
+        button.classList.add("active");
+    }
+
+    resizeWindow();
 }
+
+
+/* =========================
+   LIGHTBOX
+========================= */
+
+function openImage(src) {
+
+    const lightbox =
+        document.getElementById("lightbox");
+
+    const image =
+        document.getElementById("lightboxImage");
+
+    image.src = src;
+
+    lightbox.classList.add("show");
+}
+
+
+function closeImage() {
+
+    const lightbox =
+        document.getElementById("lightbox");
+
+    const image =
+        document.getElementById("lightboxImage");
+
+    lightbox.classList.remove("show");
+
+    image.src = "";
+}
+
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape") {
+        closeImage();
+    }
+
+});
+
+
+/* =========================
+   MOBILE DESKTOP-WINDOW SCALE
+========================= */
+
+function resizeWindow() {
+
+    const stage =
+        document.getElementById("windowStage");
+
+    const page =
+        document.getElementById("page");
+
+    if (!stage || !page) return;
+
+    const baseWidth = 650;
+
+    let scale = 1;
+
+    if (window.innerWidth < baseWidth + 30) {
+
+        scale =
+            (window.innerWidth - 20) / baseWidth;
+
+    }
+
+    scale = Math.min(1, scale);
+
+    page.style.transform =
+        "scale(" + scale + ")";
+
+    stage.style.width =
+        (baseWidth * scale) + "px";
+
+    /*
+       transform으로 줄어든 높이를
+       wrapper가 제대로 차지하도록 계산
+    */
+
+    stage.style.height =
+        (page.scrollHeight * scale) + "px";
+}
+
+
+/* =========================
+   INITIALIZE
+========================= */
+
+window.addEventListener("load", function() {
+
+    resizeWindow();
+
+    setTimeout(resizeWindow, 100);
+
+});
+
+
+window.addEventListener("resize", function() {
+
+    resizeWindow();
+
+});
+
+
+document.querySelectorAll("img").forEach(img => {
+
+    img.addEventListener("load", resizeWindow);
+
+});
 
 </script>
 
