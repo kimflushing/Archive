@@ -12,7 +12,8 @@
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     min-height: 100%;
@@ -20,19 +21,21 @@ html, body {
 
 body {
     background:
-        radial-gradient(circle at 20% 20%, rgba(190,130,190,.08), transparent 25%),
-        radial-gradient(circle at 80% 70%, rgba(220,150,210,.06), transparent 25%),
+        radial-gradient(circle at 20% 20%, rgba(210,140,210,.08), transparent 25%),
+        radial-gradient(circle at 80% 70%, rgba(190,130,200,.06), transparent 30%),
         #08070a;
-    color: #eadce9;
+
+    color: #e9dce8;
     font-family: "IBM Plex Mono", monospace;
     overflow-x: hidden;
 }
 
-/* =========================
-   BACKGROUND SYMBOLS
-========================= */
 
-.floating-symbols {
+/* =========================================
+   BACKGROUND
+========================================= */
+
+.background-symbols {
     position: fixed;
     inset: 0;
     overflow: hidden;
@@ -40,89 +43,170 @@ body {
     z-index: 0;
 }
 
-.symbol {
+.background-symbols span {
     position: absolute;
-    color: rgba(220, 166, 218, .28);
+    color: rgba(230,175,225,.32);
     font-size: 10px;
-    animation: floatSymbol linear infinite;
-    white-space: nowrap;
+    animation: floating 16s ease-in-out infinite;
 }
 
-.s1 { left: 7%;  top: 18%; animation-duration: 14s; animation-delay: -4s; }
-.s2 { left: 18%; top: 72%; animation-duration: 19s; animation-delay: -11s; }
-.s3 { left: 31%; top: 34%; animation-duration: 16s; animation-delay: -7s; }
-.s4 { left: 46%; top: 83%; animation-duration: 22s; animation-delay: -15s; }
-.s5 { left: 61%; top: 16%; animation-duration: 18s; animation-delay: -5s; }
-.s6 { left: 73%; top: 55%; animation-duration: 15s; animation-delay: -9s; }
-.s7 { left: 86%; top: 27%; animation-duration: 20s; animation-delay: -12s; }
-.s8 { left: 94%; top: 78%; animation-duration: 17s; animation-delay: -3s; }
-.s9 { left: 12%; top: 48%; animation-duration: 23s; animation-delay: -18s; }
-.s10 { left: 55%; top: 43%; animation-duration: 21s; animation-delay: -10s; }
-.s11 { left: 38%; top: 10%; animation-duration: 17s; animation-delay: -6s; }
-.s12 { left: 80%; top: 88%; animation-duration: 24s; animation-delay: -20s; }
+.s01 {
+    left: 7%;
+    top: 18%;
+    animation-duration: 13s;
+}
 
-@keyframes floatSymbol {
+.s02 {
+    left: 17%;
+    top: 73%;
+    animation-duration: 18s;
+    animation-delay: -5s;
+}
+
+.s03 {
+    left: 29%;
+    top: 35%;
+    animation-duration: 15s;
+    animation-delay: -9s;
+}
+
+.s04 {
+    left: 43%;
+    top: 82%;
+    animation-duration: 21s;
+    animation-delay: -14s;
+}
+
+.s05 {
+    left: 57%;
+    top: 15%;
+    animation-duration: 17s;
+    animation-delay: -4s;
+}
+
+.s06 {
+    left: 68%;
+    top: 57%;
+    animation-duration: 14s;
+    animation-delay: -8s;
+}
+
+.s07 {
+    left: 80%;
+    top: 28%;
+    animation-duration: 19s;
+    animation-delay: -11s;
+}
+
+.s08 {
+    left: 92%;
+    top: 78%;
+    animation-duration: 16s;
+    animation-delay: -3s;
+}
+
+.s09 {
+    left: 12%;
+    top: 48%;
+    animation-duration: 22s;
+    animation-delay: -17s;
+}
+
+.s10 {
+    left: 37%;
+    top: 10%;
+    animation-duration: 18s;
+    animation-delay: -7s;
+}
+
+.s11 {
+    left: 62%;
+    top: 88%;
+    animation-duration: 20s;
+    animation-delay: -13s;
+}
+
+.s12 {
+    left: 87%;
+    top: 46%;
+    animation-duration: 15s;
+    animation-delay: -6s;
+}
+
+@keyframes floating {
     0% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: .12;
+        transform: translate(0,0) rotate(0deg);
+        opacity: .08;
     }
 
     25% {
-        transform: translate(8px, -12px) rotate(20deg);
-        opacity: .32;
+        transform: translate(9px,-12px) rotate(15deg);
+        opacity: .34;
     }
 
     50% {
-        transform: translate(-7px, -20px) rotate(-10deg);
-        opacity: .16;
+        transform: translate(-7px,-22px) rotate(-10deg);
+        opacity: .15;
     }
 
     75% {
-        transform: translate(10px, -8px) rotate(15deg);
-        opacity: .3;
+        transform: translate(11px,-8px) rotate(12deg);
+        opacity: .30;
     }
 
     100% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: .12;
+        transform: translate(0,0) rotate(0deg);
+        opacity: .08;
     }
 }
 
-/* =========================
-   MOBILE WINDOW SCALE
-========================= */
+
+/* =========================================
+   DESKTOP WINDOW
+========================================= */
 
 .window-stage {
     position: relative;
     z-index: 2;
+
     width: 650px;
-    margin: 45px auto 70px;
+
+    margin: 45px auto 80px;
 }
 
 .page {
     width: 650px;
-    background:
-        linear-gradient(rgba(255,255,255,.012), rgba(255,255,255,.012)),
-        #0b090c;
-    border: 1px solid rgba(225,170,220,.62);
+
+    background: rgba(10,8,12,.97);
+
+    border: 1px solid rgba(225,170,220,.65);
+
     box-shadow:
-        0 0 0 1px rgba(80,50,80,.5),
-        0 0 35px rgba(190,110,190,.10);
+        0 0 0 1px rgba(80,50,80,.45),
+        0 0 35px rgba(200,120,200,.12);
+
+    transform-origin: top left;
 }
 
-/* =========================
+
+/* =========================================
    WINDOW BAR
-========================= */
+========================================= */
 
 .window-bar {
-    height: 27px;
-    border-bottom: 1px solid rgba(225,170,220,.4);
+    height: 28px;
+
     display: flex;
     align-items: center;
+
     padding: 0 9px;
+
+    border-bottom:
+        1px solid rgba(225,170,220,.38);
+
+    color: #a991a7;
+
     font-size: 8px;
-    color: #bca8ba;
-    letter-spacing: .08em;
 }
 
 .window-dots {
@@ -134,90 +218,137 @@ body {
 .window-dots span {
     width: 6px;
     height: 6px;
-    border: 1px solid #d9a9d3;
+
+    border: 1px solid #cfa7ca;
     border-radius: 50%;
-    display: block;
 }
 
 .window-title {
     flex: 1;
+    letter-spacing: .08em;
+}
+
+.home-button {
+    color: #b99eb5;
+    text-decoration: none;
+
+    font-size: 8px;
+    margin-right: 13px;
+
+    transition: color .2s;
+}
+
+.home-button:hover {
+    color: #f0ccea;
 }
 
 .window-close {
-    color: #c9a9c5;
+    color: #c5a7c1;
 }
 
-/* =========================
-   INNER FRAME
-========================= */
+
+/* =========================================
+   INNER
+========================================= */
 
 .inner {
     margin: 10px;
-    border: 1px solid rgba(225,170,220,.27);
+
+    border:
+        1px solid rgba(225,170,220,.25);
 }
 
-/* =========================
+
+/* =========================================
    HEADER
-========================= */
+========================================= */
 
 .header {
     padding: 20px 20px 15px;
+
     text-align: center;
-    border-bottom: 1px solid rgba(225,170,220,.28);
+
+    border-bottom:
+        1px solid rgba(225,170,220,.27);
 }
 
 .title {
     margin: 0;
-    font-family: "Cormorant Garamond", serif;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
     font-size: 27px;
     font-weight: 500;
+
     letter-spacing: .14em;
-    color: #f1d9ee;
+
+    color: #efd8ec;
 }
 
 .subtitle {
     margin-top: 4px;
+
+    color: #927a90;
+
     font-size: 8px;
+
     letter-spacing: .18em;
-    color: #9e829c;
 }
 
-/* =========================
+
+/* =========================================
    MENU
-========================= */
+========================================= */
 
 .menu {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    border-bottom: 1px solid rgba(225,170,220,.28);
+
+    border-bottom:
+        1px solid rgba(225,170,220,.25);
 }
 
 .menu button {
     border: 0;
-    border-right: 1px solid rgba(225,170,220,.2);
+
+    border-right:
+        1px solid rgba(225,170,220,.18);
+
     background: transparent;
-    color: #927b91;
+
+    color: #8e778c;
+
     padding: 9px 11px;
-    font-family: "IBM Plex Mono", monospace;
+
+    font-family:
+        "IBM Plex Mono",
+        monospace;
+
     font-size: 8px;
-    letter-spacing: .06em;
+
     cursor: pointer;
+
+    white-space: nowrap;
 }
 
 .menu button:last-child {
-    border-right: 0;
+    border-right: none;
 }
 
 .menu button:hover,
 .menu button.active {
-    color: #f1cdea;
-    background: rgba(225,170,220,.055);
+    color: #f0cbea;
+
+    background:
+        rgba(225,170,220,.05);
 }
 
-/* =========================
+
+/* =========================================
    CONTENT
-========================= */
+========================================= */
 
 .content {
     padding: 19px;
@@ -233,39 +364,62 @@ body {
 
 .section-title {
     margin: 0 0 12px;
-    font-family: "Cormorant Garamond", serif;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
     font-size: 20px;
     font-weight: 500;
-    color: #e7cde4;
+
+    color: #e6cce3;
+
     letter-spacing: .08em;
 }
 
 .section-subtitle {
     margin: -7px 0 15px;
+
+    color: #806d7d;
+
     font-size: 7px;
-    color: #806d7e;
+
     letter-spacing: .12em;
 }
 
-/* =========================
+
+/* =========================================
    MAIN
-========================= */
+========================================= */
 
 .main-image {
     width: 100%;
     height: 270px;
-    object-fit: cover;
+
     display: block;
-    border: 1px solid rgba(225,170,220,.25);
+
+    object-fit: cover;
+
+    border:
+        1px solid rgba(225,170,220,.25);
+
     margin-bottom: 17px;
 }
 
 .poem {
-    border-left: 1px solid rgba(225,170,220,.55);
     padding: 4px 0 4px 15px;
+
+    border-left:
+        1px solid rgba(225,170,220,.55);
+
     color: #cdbbc9;
-    font-family: "Cormorant Garamond", serif;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
     font-size: 15px;
+
     line-height: 1.75;
 }
 
@@ -273,24 +427,32 @@ body {
     margin: 0;
 }
 
-/* =========================
+
+/* =========================================
    CHARACTER
-========================= */
+========================================= */
 
 .character-layout {
     display: grid;
+
     grid-template-columns: 180px 1fr;
+
     gap: 17px;
+
     align-items: start;
 }
 
 .character-image {
     width: 180px;
     height: 260px;
+
+    display: block;
+
     object-fit: cover;
     object-position: center;
-    border: 1px solid rgba(225,170,220,.35);
-    display: block;
+
+    border:
+        1px solid rgba(225,170,220,.35);
 }
 
 .info {
@@ -302,120 +464,176 @@ body {
 }
 
 .info-label {
-    color: #d6a9d0;
-    font-size: 8px;
-    letter-spacing: .12em;
     margin-bottom: 4px;
+
+    color: #d4a7cf;
+
+    font-size: 8px;
+
+    letter-spacing: .12em;
 }
 
 .info-text {
     color: #aaa0aa;
+
     font-size: 8px;
+
     line-height: 1.75;
 }
 
-/* =========================
+
+/* =========================================
    WORLD / RELATIONSHIP
-========================= */
+========================================= */
 
 .text-box {
-    border: 1px solid rgba(225,170,220,.25);
     padding: 15px;
+
+    border:
+        1px solid rgba(225,170,220,.25);
+
     color: #aaa0aa;
+
     font-size: 8px;
+
     line-height: 1.9;
 }
 
 .text-box strong {
     display: block;
-    color: #d9b4d5;
-    font-family: "Cormorant Garamond", serif;
-    font-size: 17px;
-    font-weight: 500;
+
     margin-bottom: 7px;
+
+    color: #d9b4d5;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 17px;
+
+    font-weight: 500;
 }
 
 .progression {
     margin-top: 14px;
+
     padding-top: 10px;
-    border-top: 1px solid rgba(225,170,220,.2);
+
+    border-top:
+        1px solid rgba(225,170,220,.20);
+
     color: #cda8c9;
-    letter-spacing: .03em;
 }
 
-/* =========================
+
+/* =========================================
    COMMISSION
-========================= */
+========================================= */
 
 .commission-note {
-    color: #877485;
-    font-size: 7px;
     margin-bottom: 12px;
+
+    color: #877485;
+
+    font-size: 7px;
 }
 
 .commission-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
     gap: 8px;
 }
 
 .commission-item {
     position: relative;
+
     aspect-ratio: 1 / 1;
-    border: 1px solid rgba(225,170,220,.25);
-    background: #100d11;
+
     overflow: hidden;
+
+    border:
+        1px solid rgba(225,170,220,.25);
+
+    background: #100d11;
+
     cursor: pointer;
 }
 
 .commission-item img {
     width: 100%;
     height: 100%;
+
     display: block;
+
     object-fit: cover;
-    transition: opacity .2s ease;
+
+    transition: opacity .2s;
 }
 
 .commission-item:hover img {
-    opacity: .72;
+    opacity: .7;
 }
 
 .commission-number {
     position: absolute;
+
     left: 5px;
     bottom: 4px;
-    font-size: 7px;
-    color: #e0c1dc;
-    background: rgba(8,7,10,.75);
+
     padding: 2px 4px;
+
+    background: rgba(8,7,10,.78);
+
+    color: #e0c1dc;
+
+    font-size: 7px;
 }
 
-/* =========================
+
+/* =========================================
    FOOTER
-========================= */
+========================================= */
 
 .footer {
-    border-top: 1px solid rgba(225,170,220,.22);
     padding: 10px;
+
+    border-top:
+        1px solid rgba(225,170,220,.20);
+
     text-align: center;
+
     color: #695867;
+
     font-size: 7px;
+
     letter-spacing: .08em;
 }
 
-/* =========================
+
+/* =========================================
    LIGHTBOX
-========================= */
+========================================= */
 
 .lightbox {
     position: fixed;
+
     inset: 0;
-    z-index: 20;
+
+    z-index: 50;
+
     display: none;
+
     align-items: center;
     justify-content: center;
-    background: rgba(5,4,7,.92);
+
     padding: 30px;
+
+    background:
+        rgba(5,4,7,.93);
 }
 
 .lightbox.show {
@@ -425,149 +643,215 @@ body {
 .lightbox img {
     max-width: 90vw;
     max-height: 88vh;
+
     object-fit: contain;
-    border: 1px solid rgba(225,170,220,.5);
-    box-shadow: 0 0 35px rgba(210,130,205,.15);
+
+    border:
+        1px solid rgba(225,170,220,.5);
+
+    box-shadow:
+        0 0 35px rgba(210,130,205,.15);
 }
 
 .close-lightbox {
     position: fixed;
-    top: 15px;
+
+    top: 14px;
     right: 20px;
-    color: #e7cde4;
+
+    color: #ead0e7;
+
     font-size: 18px;
+
     cursor: pointer;
-    font-family: "IBM Plex Mono", monospace;
 }
 
-/* =========================
+
+/* =========================================
    MOBILE
-   KEEP DESKTOP WINDOW
-========================= */
+   650px 창을 통째로 축소
+========================================= */
 
-@media (max-width: 670px) {
-
-    body {
-        min-width: 0;
-    }
+@media (max-width: 680px) {
 
     .window-stage {
         margin-top: 20px;
         margin-bottom: 30px;
     }
 
-    /*
-      내부 페이지는 650px 고정.
-      JS가 화면 폭에 맞춰 전체 창을 축소하므로
-      모바일에서도 레이아웃 자체는 데스크톱과 동일함.
-    */
-
-    .page {
-        transform-origin: top left;
-    }
 }
 </style>
 </head>
 
+
 <body>
 
-<!-- 움직이는 배경 문양 -->
-<div class="floating-symbols" aria-hidden="true">
-    <span class="symbol s1">✦</span>
-    <span class="symbol s2">·</span>
-    <span class="symbol s3">✧</span>
-    <span class="symbol s4">+</span>
-    <span class="symbol s5">⋆</span>
-    <span class="symbol s6">·</span>
-    <span class="symbol s7">✦</span>
-    <span class="symbol s8">+</span>
-    <span class="symbol s9">✧</span>
-    <span class="symbol s10">·</span>
-    <span class="symbol s11">⋆</span>
-    <span class="symbol s12">✦</span>
+
+<!-- =========================================
+     움직이는 배경
+========================================= -->
+
+<div class="background-symbols">
+
+    <span class="s01">✦</span>
+    <span class="s02">·</span>
+    <span class="s03">✧</span>
+    <span class="s04">+</span>
+    <span class="s05">✦</span>
+    <span class="s06">·</span>
+    <span class="s07">✧</span>
+    <span class="s08">+</span>
+    <span class="s09">⋆</span>
+    <span class="s10">·</span>
+    <span class="s11">✦</span>
+    <span class="s12">✧</span>
+
 </div>
 
 
-<!-- 모바일에서도 하나의 작은 데스크톱 창처럼 보이게 하는 영역 -->
-<div class="window-stage" id="windowStage">
+<!-- =========================================
+     WINDOW
+========================================= -->
 
-    <main class="page" id="page">
+<div
+    class="window-stage"
+    id="windowStage"
+>
 
-        <!-- 창 제목 표시줄 -->
+    <main
+        class="page"
+        id="page"
+    >
+
+
+        <!-- WINDOW BAR -->
+
         <div class="window-bar">
+
             <div class="window-dots">
+
                 <span></span>
                 <span></span>
                 <span></span>
+
             </div>
+
 
             <div class="window-title">
                 dream01.html
             </div>
 
+
+            <a
+                href="index.html"
+                class="home-button"
+            >
+                ← HOME
+            </a>
+
+
             <div class="window-close">
                 ×
             </div>
+
         </div>
+
 
 
         <div class="inner">
 
-            <!-- HEADER -->
+
+            <!-- =================================
+                 HEADER
+            ================================== -->
+
             <header class="header">
-                <h1 class="title">DREAM 01</h1>
-                <div class="subtitle">WANDERER × LUCIANO</div>
+
+                <h1 class="title">
+                    DREAM 01
+                </h1>
+
+                <div class="subtitle">
+                    WANDERER × LUCIANO
+                </div>
+
             </header>
 
 
-            <!-- MENU -->
+
+            <!-- =================================
+                 MENU
+            ================================== -->
+
             <nav class="menu">
 
-                <button class="active"
-                        onclick="showSection('main', this)">
+                <button
+                    class="active"
+                    onclick="showSection('main', this)"
+                >
                     MAIN
                 </button>
 
-                <button onclick="showSection('oc', this)">
+                <button
+                    onclick="showSection('oc', this)"
+                >
                     OC
                 </button>
 
-                <button onclick="showSection('canon', this)">
+                <button
+                    onclick="showSection('canon', this)"
+                >
                     CANON
                 </button>
 
-                <button onclick="showSection('world', this)">
+                <button
+                    onclick="showSection('world', this)"
+                >
                     WORLD
                 </button>
 
-                <button onclick="showSection('relationship', this)">
+                <button
+                    onclick="showSection('relationship', this)"
+                >
                     RELATIONSHIP
                 </button>
 
-                <button onclick="showSection('commission', this)">
+                <button
+                    onclick="showSection('commission', this)"
+                >
                     COMMISSION
                 </button>
 
             </nav>
 
 
-            <!-- CONTENT -->
+
             <div class="content">
 
 
-                <!-- ================= MAIN ================= -->
+                <!-- =================================
+                     MAIN
+                ================================== -->
 
-                <section id="main" class="section active">
+                <section
+                    id="main"
+                    class="section active"
+                >
 
                     <h2 class="section-title">
                         MAIN
                     </h2>
 
+
+                    <!-- MAIN 이미지는 드림 파일이 아니라
+                         커미션 01을 사용 -->
+
                     <img
                         src="dream01.JPG"
                         class="main-image"
-                        alt="DREAM 01"
+                        alt="Commission 01"
                     >
+
 
                     <div class="poem">
 
@@ -596,9 +880,15 @@ body {
                 </section>
 
 
-                <!-- ================= OC ================= -->
 
-                <section id="oc" class="section">
+                <!-- =================================
+                     OC
+                ================================== -->
+
+                <section
+                    id="oc"
+                    class="section"
+                >
 
                     <h2 class="section-title">
                         OC
@@ -611,14 +901,17 @@ body {
 
                     <div class="character-layout">
 
+
+                        <!-- 루치아노 전신 -->
                         <img
-                            src="oc01.JPG"
+                            src="oc01.jpg"
                             class="character-image"
-                            alt="루치아노"
+                            alt="루치아노 전신"
                         >
 
 
                         <div class="info">
+
 
                             <div class="info-block">
 
@@ -689,6 +982,7 @@ body {
 
                             </div>
 
+
                         </div>
 
                     </div>
@@ -696,9 +990,15 @@ body {
                 </section>
 
 
-                <!-- ================= CANON ================= -->
 
-                <section id="canon" class="section">
+                <!-- =================================
+                     CANON
+                ================================== -->
+
+                <section
+                    id="canon"
+                    class="section"
+                >
 
                     <h2 class="section-title">
                         CANON
@@ -711,6 +1011,7 @@ body {
 
                     <div class="character-layout">
 
+
                         <img
                             src="canon01.JPG"
                             class="character-image"
@@ -719,6 +1020,7 @@ body {
 
 
                         <div class="info">
+
 
                             <div class="info-block">
 
@@ -789,6 +1091,7 @@ body {
 
                             </div>
 
+
                         </div>
 
                     </div>
@@ -796,9 +1099,15 @@ body {
                 </section>
 
 
-                <!-- ================= WORLD ================= -->
 
-                <section id="world" class="section">
+                <!-- =================================
+                     WORLD
+                ================================== -->
+
+                <section
+                    id="world"
+                    class="section"
+                >
 
                     <h2 class="section-title">
                         WORLD
@@ -818,9 +1127,15 @@ body {
                 </section>
 
 
-                <!-- ================= RELATIONSHIP ================= -->
 
-                <section id="relationship" class="section">
+                <!-- =================================
+                     RELATIONSHIP
+                ================================== -->
+
+                <section
+                    id="relationship"
+                    class="section"
+                >
 
                     <h2 class="section-title">
                         RELATIONSHIP
@@ -829,11 +1144,14 @@ body {
 
                     <div class="text-box">
 
-                        <strong>WANDERER × LUCIANO</strong>
+                        <strong>
+                            WANDERER × LUCIANO
+                        </strong>
 
                         가부키모노였던 시절부터 함께해온 사이로, 오랜 시간 서로를 의지하며 평생을 약속한 유일한 관계.
                         친구로 시작한 긴 우정은 어느 순간부터 서로를 향한 특별한 감정으로 변해가기 시작했다.
                         서로를 사랑하고 있음에도 관계가 깨질까 두려워 쉽게 마음을 꺼내지 못한 채, 일방적인 짝사랑처럼 감정을 품고 있다.
+
 
                         <div class="progression">
                             친구 → 썸 → 짝사랑 → 쌍방
@@ -844,9 +1162,15 @@ body {
                 </section>
 
 
-                <!-- ================= COMMISSION ================= -->
 
-                <section id="commission" class="section">
+                <!-- =================================
+                     COMMISSION
+                ================================== -->
+
+                <section
+                    id="commission"
+                    class="section"
+                >
 
                     <h2 class="section-title">
                         COMMISSION
@@ -860,13 +1184,16 @@ body {
                     <div class="commission-grid">
 
 
-                        <div class="commission-item"
-                             onclick="openImage('commission01.JPG')">
+                        <!-- 01 -->
+
+                        <div
+                            class="commission-item"
+                            onclick="openImage('commission01.JPG')"
+                        >
 
                             <img
-                                src="commission01.JPG"
+                                src="commission01.PNG"
                                 alt="Commission 01"
-                                onerror="this.style.display='none'"
                             >
 
                             <span class="commission-number">
@@ -876,13 +1203,16 @@ body {
                         </div>
 
 
-                        <div class="commission-item"
-                             onclick="openImage('commission02.JPG')">
+                        <!-- 02 -->
+
+                        <div
+                            class="commission-item"
+                            onclick="openImage('commission02.JPG')"
+                        >
 
                             <img
-                                src="commission02.JPG"
+                                src="commission02.PNG"
                                 alt="Commission 02"
-                                onerror="this.style.display='none'"
                             >
 
                             <span class="commission-number">
@@ -892,13 +1222,16 @@ body {
                         </div>
 
 
-                        <div class="commission-item"
-                             onclick="openImage('commission03.JPG')">
+                        <!-- 03 -->
+
+                        <div
+                            class="commission-item"
+                            onclick="openImage('commission03.JPG')"
+                        >
 
                             <img
-                                src="commission03.JPG"
+                                src="commission03.PNG"
                                 alt="Commission 03"
-                                onerror="this.style.display='none'"
                             >
 
                             <span class="commission-number">
@@ -908,13 +1241,16 @@ body {
                         </div>
 
 
-                        <div class="commission-item"
-                             onclick="openImage('commission04.JPG')">
+                        <!-- 04 -->
+
+                        <div
+                            class="commission-item"
+                            onclick="openImage('commission04.JPG')"
+                        >
 
                             <img
-                                src="commission04.JPG"
+                                src="commission04.PNG"
                                 alt="Commission 04"
-                                onerror="this.style.display='none'"
                             >
 
                             <span class="commission-number">
@@ -924,13 +1260,16 @@ body {
                         </div>
 
 
-                        <div class="commission-item"
-                             onclick="openImage('commission05.JPG')">
+                        <!-- 05 -->
+
+                        <div
+                            class="commission-item"
+                            onclick="openImage('commission05.JPG')"
+                        >
 
                             <img
                                 src="commission05.JPG"
                                 alt="Commission 05"
-                                onerror="this.style.display='none'"
                             >
 
                             <span class="commission-number">
@@ -940,13 +1279,16 @@ body {
                         </div>
 
 
-                        <div class="commission-item"
-                             onclick="openImage('commission06.JPG')">
+                        <!-- 06 -->
+
+                        <div
+                            class="commission-item"
+                            onclick="openImage('commission06.JPG')"
+                        >
 
                             <img
-                                src="commission06.JPG"
+                                src="commission06.PNG"
                                 alt="Commission 06"
-                                onerror="this.style.display='none'"
                             >
 
                             <span class="commission-number">
@@ -956,13 +1298,16 @@ body {
                         </div>
 
 
-                        <div class="commission-item"
-                             onclick="openImage('commission07.JPG')">
+                        <!-- 07 -->
+
+                        <div
+                            class="commission-item"
+                            onclick="openImage('commission07.JPG')"
+                        >
 
                             <img
-                                src="commission07.JPG"
+                                src="commission07.PNG"
                                 alt="Commission 07"
-                                onerror="this.style.display='none'"
                             >
 
                             <span class="commission-number">
@@ -972,13 +1317,16 @@ body {
                         </div>
 
 
-                        <div class="commission-item"
-                             onclick="openImage('commission08.JPG')">
+                        <!-- 08 -->
+
+                        <div
+                            class="commission-item"
+                            onclick="openImage('commission08.JPG')"
+                        >
 
                             <img
-                                src="commission08.JPG"
+                                src="commission08.PNG"
                                 alt="Commission 08"
-                                onerror="this.style.display='none'"
                             >
 
                             <span class="commission-number">
@@ -988,13 +1336,16 @@ body {
                         </div>
 
 
-                        <div class="commission-item"
-                             onclick="openImage('commission09.JPG')">
+                        <!-- 09 -->
+
+                        <div
+                            class="commission-item"
+                            onclick="openImage('commission09.JPG')"
+                        >
 
                             <img
                                 src="commission09.JPG"
                                 alt="Commission 09"
-                                onerror="this.style.display='none'"
                             >
 
                             <span class="commission-number">
@@ -1004,13 +1355,16 @@ body {
                         </div>
 
 
-                        <div class="commission-item"
-                             onclick="openImage('commission10.JPG')">
+                        <!-- 10 -->
+
+                        <div
+                            class="commission-item"
+                            onclick="openImage('commission10.JPG')"
+                        >
 
                             <img
-                                src="commission10.JPG"
+                                src="commission10.PNG"
                                 alt="Commission 10"
-                                onerror="this.style.display='none'"
                             >
 
                             <span class="commission-number">
@@ -1020,13 +1374,16 @@ body {
                         </div>
 
 
-                        <div class="commission-item"
-                             onclick="openImage('commission11.JPG')">
+                        <!-- 11 -->
+
+                        <div
+                            class="commission-item"
+                            onclick="openImage('commission11.JPG')"
+                        >
 
                             <img
-                                src="commission11.JPG"
+                                src="commission11.jpg"
                                 alt="Commission 11"
-                                onerror="this.style.display='none'"
                             >
 
                             <span class="commission-number">
@@ -1036,13 +1393,16 @@ body {
                         </div>
 
 
-                        <div class="commission-item"
-                             onclick="openImage('commission12.JPG')">
+                        <!-- 12 -->
+
+                        <div
+                            class="commission-item"
+                            onclick="openImage('commission12.JPG')"
+                        >
 
                             <img
-                                src="commission12.JPG"
+                                src="commission12.jpg"
                                 alt="Commission 12"
-                                onerror="this.style.display='none'"
                             >
 
                             <span class="commission-number">
@@ -1052,13 +1412,16 @@ body {
                         </div>
 
 
-                        <div class="commission-item"
-                             onclick="openImage('commission13.JPG')">
+                        <!-- 13 -->
+
+                        <div
+                            class="commission-item"
+                            onclick="openImage('commission13.JPG')"
+                        >
 
                             <img
-                                src="commission13.JPG"
+                                src="commission13.jpg"
                                 alt="Commission 13"
-                                onerror="this.style.display='none'"
                             >
 
                             <span class="commission-number">
@@ -1072,12 +1435,14 @@ body {
 
                 </section>
 
+
             </div>
 
 
             <footer class="footer">
                 DREAM ARCHIVE · 01
             </footer>
+
 
         </div>
 
@@ -1086,7 +1451,10 @@ body {
 </div>
 
 
-<!-- ================= LIGHTBOX ================= -->
+
+<!-- =========================================
+     LIGHTBOX
+========================================= -->
 
 <div
     class="lightbox"
@@ -1101,6 +1469,7 @@ body {
         ×
     </div>
 
+
     <img
         id="lightboxImage"
         src=""
@@ -1111,46 +1480,51 @@ body {
 </div>
 
 
+
 <script>
 
-/* =========================
+
+/* =========================================
    TAB
-========================= */
+========================================= */
 
 function showSection(sectionId, button) {
 
-    const sections =
-        document.querySelectorAll(".section");
+    document
+        .querySelectorAll(".section")
+        .forEach(section => {
 
-    sections.forEach(section => {
-        section.classList.remove("active");
-    });
+            section.classList.remove("active");
 
-    const target =
-        document.getElementById(sectionId);
+        });
 
-    if (target) {
-        target.classList.add("active");
-    }
 
-    const buttons =
-        document.querySelectorAll(".menu button");
+    document
+        .getElementById(sectionId)
+        .classList.add("active");
 
-    buttons.forEach(btn => {
-        btn.classList.remove("active");
-    });
 
-    if (button) {
-        button.classList.add("active");
-    }
+    document
+        .querySelectorAll(".menu button")
+        .forEach(btn => {
+
+            btn.classList.remove("active");
+
+        });
+
+
+    button.classList.add("active");
+
 
     resizeWindow();
+
 }
 
 
-/* =========================
-   LIGHTBOX
-========================= */
+
+/* =========================================
+   COMMISSION 확대
+========================================= */
 
 function openImage(src) {
 
@@ -1160,9 +1534,11 @@ function openImage(src) {
     const image =
         document.getElementById("lightboxImage");
 
+
     image.src = src;
 
     lightbox.classList.add("show");
+
 }
 
 
@@ -1174,24 +1550,32 @@ function closeImage() {
     const image =
         document.getElementById("lightboxImage");
 
+
     lightbox.classList.remove("show");
 
     image.src = "";
+
 }
 
 
-document.addEventListener("keydown", function(event) {
+document.addEventListener(
+    "keydown",
+    function(event) {
 
-    if (event.key === "Escape") {
-        closeImage();
+        if (event.key === "Escape") {
+
+            closeImage();
+
+        }
+
     }
+);
 
-});
 
 
-/* =========================
-   MOBILE DESKTOP-WINDOW SCALE
-========================= */
+/* =========================================
+   모바일 창 축소
+========================================= */
 
 function resizeWindow() {
 
@@ -1201,62 +1585,66 @@ function resizeWindow() {
     const page =
         document.getElementById("page");
 
-    if (!stage || !page) return;
 
     const baseWidth = 650;
 
-    let scale = 1;
 
-    if (window.innerWidth < baseWidth + 30) {
+    if (window.innerWidth < 680) {
 
-        scale =
+        const scale =
             (window.innerWidth - 20) / baseWidth;
+
+
+        const finalScale =
+            Math.min(scale, 1);
+
+
+        page.style.transform =
+            "scale(" + finalScale + ")";
+
+
+        stage.style.width =
+            (baseWidth * finalScale) + "px";
+
+
+        stage.style.height =
+            (page.scrollHeight * finalScale) + "px";
 
     }
 
-    scale = Math.min(1, scale);
+    else {
 
-    page.style.transform =
-        "scale(" + scale + ")";
+        page.style.transform = "none";
 
-    stage.style.width =
-        (baseWidth * scale) + "px";
+        stage.style.width = "650px";
 
-    /*
-       transform으로 줄어든 높이를
-       wrapper가 제대로 차지하도록 계산
-    */
+        stage.style.height = "auto";
 
-    stage.style.height =
-        (page.scrollHeight * scale) + "px";
+    }
+
 }
 
 
-/* =========================
-   INITIALIZE
-========================= */
+window.addEventListener(
+    "load",
+    function() {
 
-window.addEventListener("load", function() {
+        resizeWindow();
 
-    resizeWindow();
+        setTimeout(
+            resizeWindow,
+            300
+        );
 
-    setTimeout(resizeWindow, 100);
-
-});
-
-
-window.addEventListener("resize", function() {
-
-    resizeWindow();
-
-});
+    }
+);
 
 
-document.querySelectorAll("img").forEach(img => {
+window.addEventListener(
+    "resize",
+    resizeWindow
+);
 
-    img.addEventListener("load", resizeWindow);
-
-});
 
 </script>
 
