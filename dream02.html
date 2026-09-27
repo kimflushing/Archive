@@ -13,39 +13,37 @@
     box-sizing: border-box;
 }
 
-html,
-body {
+html, body {
     margin: 0;
     padding: 0;
-    width: 100%;
     min-height: 100%;
 }
 
 body {
     background:
-        radial-gradient(circle at 20% 20%, rgba(247,200,194,.18), transparent 25%),
-        radial-gradient(circle at 80% 80%, rgba(220,190,230,.15), transparent 25%),
+        radial-gradient(circle at 15% 15%, rgba(247,200,194,.22), transparent 27%),
+        radial-gradient(circle at 85% 75%, rgba(220,190,230,.16), transparent 28%),
         #fffafb;
     color: #806f75;
     font-family: "Nunito", sans-serif;
     overflow-x: hidden;
 }
 
-/* -------------------------
-   BACKGROUND DECORATION
-------------------------- */
+/* =========================
+   BACKGROUND SYMBOLS
+========================= */
 
 .bg-symbol {
     position: fixed;
     z-index: 0;
     pointer-events: none;
-    color: #efc6cc;
+    color: #e9bdc5;
     opacity: .55;
     font-family: "Patrick Hand", cursive;
     animation: float 7s ease-in-out infinite;
 }
 
-.s1 { left: 7%; top: 12%; font-size: 18px; animation-delay: 0s; }
+.s1 { left: 7%; top: 12%; font-size: 18px; }
 .s2 { left: 88%; top: 18%; font-size: 13px; animation-delay: 1.5s; }
 .s3 { left: 15%; top: 80%; font-size: 12px; animation-delay: 3s; }
 .s4 { left: 91%; top: 72%; font-size: 20px; animation-delay: 4s; }
@@ -56,44 +54,52 @@ body {
     0%, 100% {
         transform: translateY(0) rotate(0deg);
     }
+
     50% {
         transform: translateY(-10px) rotate(4deg);
     }
 }
 
-/* -------------------------
-   DESKTOP WINDOW
-------------------------- */
+/* =========================
+   WINDOW
+========================= */
 
 .window-wrap {
     position: relative;
     z-index: 2;
     width: 680px;
     margin: 55px auto;
+    transform-origin: top center;
 }
 
 .window {
     width: 680px;
     min-height: 720px;
-    background: rgba(255, 250, 251, .97);
+    background: rgba(255,250,251,.97);
     border: 1px solid #d9b8bf;
+
     box-shadow:
         0 0 0 4px rgba(255,255,255,.85),
-        0 8px 30px rgba(130, 85, 100, .13);
+        0 8px 30px rgba(130,85,100,.13);
 }
 
-/* -------------------------
+/* =========================
    TITLE BAR
-------------------------- */
+========================= */
 
 .titlebar {
     height: 30px;
+
     border-bottom: 1px solid #dfc3c8;
+
     background: #f7e4e7;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     padding: 0 7px;
+
     color: #987980;
     font-size: 11px;
 }
@@ -107,11 +113,15 @@ body {
 .window-icon {
     width: 13px;
     height: 13px;
+
     border: 1px solid #c997a2;
+
     background: #fff;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     font-size: 8px;
     color: #d28f9e;
 }
@@ -124,17 +134,21 @@ body {
 .window-button {
     width: 16px;
     height: 14px;
+
     border: 1px solid #d4afb7;
+
     background: #fff8f9;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     font-size: 9px;
 }
 
-/* -------------------------
+/* =========================
    HEADER
-------------------------- */
+========================= */
 
 .header {
     padding: 17px 19px 13px;
@@ -149,22 +163,27 @@ body {
 
 .logo {
     color: #b77d8c;
+
     font-family: "Patrick Hand", cursive;
+
     font-size: 25px;
     line-height: 1;
-    letter-spacing: .5px;
 }
 
 .logo-sub {
     font-size: 9px;
     color: #bba3a9;
+
     letter-spacing: 1px;
+
     margin-top: 5px;
 }
 
 .status {
     font-size: 9px;
+
     color: #b99aa2;
+
     text-align: right;
 }
 
@@ -172,21 +191,23 @@ body {
     color: #d08e9d;
 }
 
-/* -------------------------
-   MINI NAV
-------------------------- */
-
 .mini-nav {
     display: flex;
+
     gap: 5px;
+
     margin-top: 13px;
 }
 
 .mini-nav span {
     border: 1px solid #e2c8cd;
+
     background: #fff;
+
     padding: 4px 8px;
+
     font-size: 9px;
+
     color: #9e858c;
 }
 
@@ -195,9 +216,9 @@ body {
     color: #bd7e8d;
 }
 
-/* -------------------------
-   MAIN AREA
-------------------------- */
+/* =========================
+   PAGE
+========================= */
 
 .page {
     padding: 15px;
@@ -205,63 +226,86 @@ body {
 
 .intro {
     border: 1px solid #e1c7cc;
+
     background: #fff;
+
     padding: 10px 12px;
+
     margin-bottom: 12px;
 }
 
 .intro-title {
     font-family: "Patrick Hand", cursive;
+
     color: #b77b8a;
+
     font-size: 17px;
 }
 
 .intro-text {
     font-size: 10px;
+
     line-height: 1.8;
+
     color: #9b858b;
+
     margin-top: 3px;
 }
 
-/* -------------------------
+/* =========================
    CONTENT WINDOW
-------------------------- */
+========================= */
 
 .content-window {
     border: 1px solid #dcbfc5;
+
     background: #fff;
 }
 
 .content-title {
     height: 25px;
+
     border-bottom: 1px solid #e2cdd1;
+
     background: #fdf0f2;
+
     padding: 5px 9px;
+
     font-size: 9px;
+
     color: #a87b84;
 }
 
-/* -------------------------
+/* =========================
    TABS
-------------------------- */
+========================= */
 
 .tabs {
     display: grid;
+
     grid-template-columns: repeat(6, 1fr);
+
     border-bottom: 1px solid #dfc5ca;
+
     background: #fffafa;
 }
 
 .tab {
     border: 0;
+
     border-right: 1px solid #e3cdd1;
+
     padding: 8px 2px;
+
     background: #fffafa;
+
     color: #a98b92;
+
     font-family: "Nunito", sans-serif;
+
     font-size: 9px;
+
     cursor: pointer;
-    transition: .15s ease;
 }
 
 .tab:last-child {
@@ -270,21 +314,25 @@ body {
 
 .tab:hover {
     background: #fdf0f2;
+
     color: #bd7f8d;
 }
 
 .tab.active {
     background: #f8dfe4;
+
     color: #a96778;
+
     font-weight: 700;
 }
 
-/* -------------------------
+/* =========================
    TAB CONTENT
-------------------------- */
+========================= */
 
 .tab-content {
     display: none;
+
     padding: 14px;
 }
 
@@ -292,112 +340,149 @@ body {
     display: block;
 }
 
-/* -------------------------
+/* =========================
    MAIN
-------------------------- */
+========================= */
 
 .main-layout {
     display: grid;
+
     grid-template-columns: 240px 1fr;
+
     gap: 12px;
 }
 
 .main-image {
     width: 100%;
     height: 340px;
+
     object-fit: cover;
-    object-position: center;
+
     border: 1px solid #ddc0c6;
+
     background: #f9eeee;
 }
 
 .main-note {
     border: 1px solid #e3ccd0;
+
     padding: 10px;
+
     margin-top: 8px;
+
     background: #fffafa;
+
     font-size: 9px;
+
     line-height: 1.8;
 }
 
 .main-side {
     display: flex;
+
     flex-direction: column;
+
     gap: 8px;
 }
 
 .info-box {
     border: 1px solid #e2cbd0;
+
     background: #fff;
+
     padding: 10px;
 }
 
 .info-title {
     color: #b67584;
+
     font-family: "Patrick Hand", cursive;
+
     font-size: 16px;
+
     margin-bottom: 5px;
 }
 
 .info-text {
     font-size: 9px;
+
     line-height: 1.8;
+
     color: #968087;
 }
 
-/* -------------------------
-   OC / CANON
-------------------------- */
+/* =========================
+   CHARACTER
+========================= */
 
 .character-layout {
     display: grid;
+
     grid-template-columns: 190px 1fr;
+
     gap: 13px;
 }
 
 .character-image {
     width: 190px;
     height: 300px;
+
     object-fit: contain;
+
     object-position: center bottom;
+
     border: 1px solid #dec3c8;
+
     background: #fffafa;
 }
 
 .character-info {
     display: flex;
+
     flex-direction: column;
+
     gap: 7px;
 }
 
 .small-box {
     border: 1px solid #e2ccd0;
+
     padding: 9px;
+
     background: #fff;
 }
 
 .small-title {
     font-size: 9px;
+
     letter-spacing: 1px;
+
     color: #b87987;
+
     font-weight: 700;
+
     margin-bottom: 4px;
 }
 
 .small-text {
     font-size: 9px;
+
     line-height: 1.8;
+
     color: #958087;
 }
 
-/* -------------------------
+/* =========================
    WORLD
-------------------------- */
+========================= */
 
 .world-box {
     border: 1px solid #e1c9ce;
+
     background: #fff;
+
     padding: 12px;
+
     margin-bottom: 9px;
 }
 
@@ -407,45 +492,61 @@ body {
 
 .world-title {
     font-family: "Patrick Hand", cursive;
+
     color: #b67685;
+
     font-size: 17px;
+
     margin-bottom: 4px;
 }
 
 .world-text {
     font-size: 9px;
+
     line-height: 1.9;
+
     color: #958087;
 }
 
-/* -------------------------
+/* =========================
    RELATIONSHIP
-------------------------- */
+========================= */
 
 .relationship {
     border: 1px solid #dfc5ca;
+
     background: #fff;
+
     padding: 15px;
 }
 
 .relationship-title {
     text-align: center;
+
     color: #b16f80;
+
     font-family: "Patrick Hand", cursive;
+
     font-size: 22px;
+
     margin-bottom: 10px;
 }
 
 .relationship-line {
     width: 80px;
+
     height: 1px;
+
     background: #e4c7cc;
+
     margin: 0 auto 13px;
 }
 
 .relationship-text {
     font-size: 10px;
+
     line-height: 2;
+
     color: #8f777f;
 }
 
@@ -455,73 +556,100 @@ body {
 
 .relationship-tags {
     display: flex;
+
     flex-wrap: wrap;
+
     gap: 5px;
+
     margin-top: 13px;
 }
 
 .relationship-tags span {
     border: 1px solid #e3c7cc;
+
     background: #fff7f8;
+
     padding: 4px 7px;
+
     font-size: 8px;
+
     color: #b17d88;
 }
 
-/* -------------------------
-   COMMISSION
-------------------------- */
+/* =========================
+   ILLUST
+========================= */
 
-.commission-grid {
+.illust-grid {
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
+
     gap: 8px;
 }
 
-.commission-item {
-    position: relative;
+.illust-item {
     border: 1px solid #dec4c9;
+
     background: #fff;
+
     padding: 4px;
+
     cursor: pointer;
+
     transition: .15s ease;
 }
 
-.commission-item:hover {
+.illust-item:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(150,100,110,.12);
+
+    box-shadow:
+        0 4px 12px rgba(150,100,110,.12);
 }
 
-.commission-item img {
+.illust-item img {
     width: 100%;
-    height: 135px;
+
+    height: 170px;
+
     object-fit: cover;
+
     display: block;
 }
 
-.commission-number {
+.illust-number {
     font-size: 8px;
+
     color: #ad8990;
+
     text-align: center;
+
     padding: 4px 0 1px;
 }
 
-/* -------------------------
+/* =========================
    FOOTER
-------------------------- */
+========================= */
 
 .footer {
     border-top: 1px solid #e2cdd1;
+
     margin-top: 14px;
+
     padding: 10px 2px 2px;
+
     display: flex;
+
     justify-content: space-between;
+
     font-size: 8px;
+
     color: #b39ba1;
 }
 
 .home-link {
     color: #b06f80;
+
     text-decoration: none;
 }
 
@@ -529,18 +657,25 @@ body {
     text-decoration: underline;
 }
 
-/* -------------------------
+/* =========================
    LIGHTBOX
-------------------------- */
+========================= */
 
 .lightbox {
     position: fixed;
+
     inset: 0;
+
     z-index: 50;
+
     background: rgba(80,50,60,.72);
+
     display: none;
+
     align-items: center;
+
     justify-content: center;
+
     padding: 25px;
 }
 
@@ -550,48 +685,63 @@ body {
 
 .lightbox img {
     max-width: 90vw;
+
     max-height: 88vh;
+
     object-fit: contain;
+
     border: 5px solid white;
-    box-shadow: 0 10px 40px rgba(0,0,0,.3);
 }
 
 .close-lightbox {
     position: fixed;
+
     top: 18px;
+
     right: 22px;
+
     color: white;
+
     font-size: 24px;
+
     cursor: pointer;
 }
 
-/* -------------------------
+/* =========================
    MOBILE
-------------------------- */
+========================= */
 
 @media (max-width: 700px) {
 
-    body {
-        overflow-x: hidden;
-    }
-
     .window-wrap {
         width: 680px;
+
         margin: 25px auto;
+
+        transform: scale(
+            calc((100vw - 20px) / 680)
+        );
+
         transform-origin: top center;
+
+        margin-bottom: calc(
+            720px * (
+                1 - ((100vw - 20px) / 680)
+            )
+        );
     }
 
     .window {
         width: 680px;
     }
-
 }
 </style>
 </head>
 
 <body>
 
-<!-- BACKGROUND -->
+<!-- 움직이는 배경 -->
+
 <div class="bg-symbol s1">✦</div>
 <div class="bg-symbol s2">✧</div>
 <div class="bg-symbol s3">·</div>
@@ -604,647 +754,1029 @@ body {
 
 <div class="window">
 
-    <!-- TITLE BAR -->
-    <div class="titlebar">
+<!-- =========================
+     TITLE BAR
+========================= -->
 
-        <div class="title-left">
-            <div class="window-icon">♡</div>
-            <span>dream02.html</span>
+<div class="titlebar">
+
+    <div class="title-left">
+
+        <div class="window-icon">
+            ♡
         </div>
 
-        <div class="window-buttons">
-            <div class="window-button">—</div>
-            <div class="window-button">□</div>
-            <div class="window-button">×</div>
+        <span>
+            dream02.html
+        </span>
+
+    </div>
+
+
+    <div class="window-buttons">
+
+        <div class="window-button">
+            —
+        </div>
+
+        <div class="window-button">
+            □
+        </div>
+
+        <div class="window-button">
+            ×
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header class="header">
+
+    <div class="header-top">
+
+        <div>
+
+            <div class="logo">
+                dream no.02 ♡
+            </div>
+
+            <div class="logo-sub">
+                DOLORES × ISANG
+            </div>
+
+        </div>
+
+
+        <div class="status">
+
+            status :
+            <b>in love</b>
+
+            <br>
+
+            last update :
+            2026.09
+
         </div>
 
     </div>
 
 
-    <!-- HEADER -->
-    <header class="header">
+    <div class="mini-nav">
 
-        <div class="header-top">
+        <span>home</span>
 
-            <div>
-                <div class="logo">dream no.02 ♡</div>
-                <div class="logo-sub">
-                    DOLORES × ISANG
-                </div>
-            </div>
+        <span>profile</span>
 
-            <div class="status">
-                status : <b>in love</b><br>
-                last update : 2026.09
+        <span>dream</span>
+
+        <span>archive</span>
+
+        <span>♡</span>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     PAGE
+========================= -->
+
+<main class="page">
+
+
+<div class="intro">
+
+    <div class="intro-title">
+        welcome to my little dream space ♡
+    </div>
+
+    <div class="intro-text">
+
+        a small archive about two people
+        who are perhaps a little too shy
+        to say what they really mean.
+
+    </div>
+
+</div>
+
+
+<section class="content-window">
+
+
+<div class="content-title">
+
+    ♡ / dream02 / information window
+
+</div>
+
+
+<!-- =========================
+     TABS
+========================= -->
+
+<nav class="tabs">
+
+    <button
+        class="tab active"
+        data-tab="main">
+        MAIN
+    </button>
+
+    <button
+        class="tab"
+        data-tab="oc">
+        OC
+    </button>
+
+    <button
+        class="tab"
+        data-tab="canon">
+        CANON
+    </button>
+
+    <button
+        class="tab"
+        data-tab="world">
+        WORLD
+    </button>
+
+    <button
+        class="tab"
+        data-tab="relationship">
+        RELATIONSHIP
+    </button>
+
+    <button
+        class="tab"
+        data-tab="illust">
+        ILLUST
+    </button>
+
+</nav>
+
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<div
+    class="tab-content active"
+    id="main">
+
+    <div class="main-layout">
+
+
+        <div>
+
+            <img
+                class="main-image"
+                src="illust01.JPG"
+                alt="Dream 02">
+
+            <div class="main-note">
+
+                DREAM 02<br>
+
+                DOLORES × ISANG<br>
+
+                Limbus Company
+
             </div>
 
         </div>
 
 
-        <div class="mini-nav">
-            <span>home</span>
-            <span>profile</span>
-            <span>dream</span>
-            <span>archive</span>
-            <span>♡</span>
+        <div class="main-side">
+
+
+            <div class="info-box">
+
+                <div class="info-title">
+                    ABOUT
+                </div>
+
+                <div class="info-text">
+
+                    림버스 컴퍼니를 배경으로 한
+                    드림 설정 페이지.<br><br>
+
+                    온화한 모습 아래에
+                    쉽게 읽어낼 수 없는 내면을 가진
+                    돌로레스와,<br>
+
+                    자신의 감정을 쉽게 드러내지 않는
+                    이상에 대한 이야기.
+
+                </div>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <div class="info-title">
+                    COUPLE
+                </div>
+
+                <div class="info-text">
+
+                    Dolores Hayes
+                    ×
+                    Yi Sang
+
+                    <br><br>
+
+                    서로를 좋아하고 있지만
+                    서로 부끄러워서
+                    쉽게 말하지 못하는 사이.
+
+                </div>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <div class="info-title">
+                    MOOD
+                </div>
+
+                <div class="info-text">
+
+                    quiet affection / hesitation /
+                    awkwardness / fantasy /
+                    hidden feelings
+
+                </div>
+
+            </div>
+
+
         </div>
 
-    </header>
+    </div>
 
+</div>
 
-    <!-- PAGE -->
-    <main class="page">
 
-        <div class="intro">
+<!-- =========================
+     OC
+========================= -->
 
-            <div class="intro-title">
-                welcome to my little dream space ♡
-            </div>
+<div
+    class="tab-content"
+    id="oc">
 
-            <div class="intro-text">
-                a small archive about two people who are
-                perhaps a little too shy to say what they really mean.
-            </div>
 
-        </div>
+<div class="character-layout">
 
 
-        <section class="content-window">
+<div>
 
-            <div class="content-title">
-                ♡ / dream02 / information window
-            </div>
+    <img
+        class="character-image"
+        src="oc02.JPG"
+        alt="Dolores">
 
+</div>
 
-            <!-- TABS -->
-            <nav class="tabs">
 
-                <button class="tab active" data-tab="main">
-                    MAIN
-                </button>
+<div class="character-info">
 
-                <button class="tab" data-tab="oc">
-                    OC
-                </button>
 
-                <button class="tab" data-tab="canon">
-                    CANON
-                </button>
+<div class="small-box">
 
-                <button class="tab" data-tab="world">
-                    WORLD
-                </button>
+    <div class="small-title">
+        PROFILE
+    </div>
 
-                <button class="tab" data-tab="relationship">
-                    RELATIONSHIP
-                </button>
+    <div class="small-text">
 
-                <button class="tab" data-tab="commission">
-                    COMMISSION
-                </button>
+        림버스 컴퍼니 LCB 15번 수감자.<br>
 
-            </nav>
+        이름은 돌로레스 헤이즈
+        (Dolores Hayes).<br>
 
+        여성, 23세.<br>
 
-            <!-- =====================
-                 MAIN
-            ====================== -->
+        신장 158cm.<br>
 
-            <div class="tab-content active" id="main">
+        생일은 7월 10일이다.<br><br>
 
-                <div class="main-layout">
+        정확한 고향은 알려져 있지 않으며,
+        부유한 환경에서 부족함 없이
+        자라난 것으로 묘사된다.
 
-                    <div>
+    </div>
 
-                        <!-- 원하는 MAIN 이미지로 교체 -->
-                        <img
-                            src="commission01.JPG"
-                            class="main-image"
-                            alt="dream 02"
-                        >
+</div>
 
-                        <div class="main-note">
-                            <b>DOLORES × ISANG</b><br>
-                            two people who know,
-                            but never say it first.
-                        </div>
 
-                    </div>
+<div class="small-box">
 
+    <div class="small-title">
+        BACKGROUND
+    </div>
 
-                    <div class="main-side">
+    <div class="small-text">
 
-                        <div class="info-box">
+        스스로 지식을 습득한 뒤
+        N사 둥지로 이주했으며,
+        개인적인 이유로 공백의 기간을
+        가진 뒤 한 날개에 입사했다.<br><br>
 
-                            <div class="info-title">
-                                DREAM NO.02
-                            </div>
+        이후 림버스 컴퍼니에
+        소속되었다.
 
-                            <div class="info-text">
-                                림버스 컴퍼니 세계관을 바탕으로 한
-                                두 사람의 이야기.
-                                서로에게 특별한 감정을 품고 있지만
-                                정작 그 마음을 말하지 못한 채
-                                조용히 서로의 곁에 머물고 있다.
-                            </div>
+    </div>
 
-                        </div>
+</div>
 
 
-                        <div class="info-box">
+<div class="small-box">
 
-                            <div class="info-title">
-                                pairing
-                            </div>
+    <div class="small-title">
+        PERSONALITY
+    </div>
 
-                            <div class="info-text">
-                                Dolores × 이상<br><br>
-                                slow burn · mutual crush · shy love
-                            </div>
+    <div class="small-text">
 
-                        </div>
+        거리낌 없고 천진난만한
+        순수한 소녀 같은 모습을 보이며,
+        온화하고 상냥한 편이다.<br><br>
 
+        하지만 내면은 겉으로 보이는
+        모습과 정반대에 가깝다.<br><br>
 
-                        <div class="info-box">
+        상냥한 말을 하는 것처럼 보이면서도
+        상대방을 비꼬기도 하며,
+        자신의 마음대로 행동해주지 않는다면
+        심기가 불편해져 말이 길어지기도 한다.
 
-                            <div class="info-title">
-                                little note ♡
-                            </div>
+    </div>
 
-                            <div class="info-text">
-                                가까워질수록 오히려 말하지 못하는 마음.
-                                서로가 자신을 특별하게 생각한다는 것을
-                                어렴풋이 알고 있지만,
-                                먼저 확인하는 것은 두려운 관계.
-                            </div>
+</div>
 
-                        </div>
 
-                    </div>
+<div class="small-box">
 
-                </div>
+    <div class="small-title">
+        INNER SIDE
+    </div>
 
-            </div>
+    <div class="small-text">
 
+        자신의 내면을 쉽게 드러내지 않으며,
+        편하거나 신뢰하는 사람이 아니라면
+        먼저 거리를 둔다.<br><br>
 
-            <!-- =====================
-                 OC
-            ====================== -->
+        자신도 자신을 이해하지 못한다는 듯한
+        말을 할 때가 있지만,
+        다시 되묻는다면 아무것도 아니라며
+        넘겨버린다.<br><br>
 
-            <div class="tab-content" id="oc">
+        지능적으로는 높은 편이지만
+        공상에 빠질 때에는 실제 나이보다
+        훨씬 어린 소녀 같은 생각을
+        늘어놓기도 한다.
 
-                <div class="character-layout">
+    </div>
 
-                    <div>
+</div>
 
-                        <img
-                            src="oc02.JPG"
-                            class="character-image"
-                            alt="Dolores"
-                        >
 
-                    </div>
+<div class="small-box">
 
+    <div class="small-title">
+        APPEARANCE
+    </div>
 
-                    <div class="character-info">
+    <div class="small-text">
 
-                        <div class="small-box">
+        앞머리가 있는 금발의 여성.
+        눈 밑과 입술 아래에 점이 있으며
+        전체적으로 귀여운 인상을 지녔다.<br><br>
 
-                            <div class="small-title">
-                                PROFILE
-                            </div>
+        수감자들 중에서도 키가 작은 편이며,
+        머그샷에서는 흰색 원피스를 입고
+        생기 없이 바라보는 모습으로
+        묘사된다.
 
-                            <div class="small-text">
-                                이름 돌로레스 헤이즈.<br>
-                                여성 / 23세 / 158cm / 7월 10일생.<br>
-                                림버스 컴퍼니 LCB 15번 수감자.
-                                정확한 고향은 알려져 있지 않으며,
-                                부족함 없이 자라난 뒤 지식을 습득하고
-                                N사 둥지로 이주했다.
-                            </div>
+    </div>
 
-                        </div>
+</div>
 
 
-                        <div class="small-box">
+<div class="small-box">
 
-                            <div class="small-title">
-                                PERSONALITY
-                            </div>
+    <div class="small-title">
+        SYMBOL
+    </div>
 
-                            <div class="small-text">
-                                거리낌 없고 천진난만하며 온화하고
-                                상냥한 모습을 보인다.
-                                하지만 내면에는 겉모습과 다른
-                                반발심이 있으며,
-                                상대가 자신의 뜻대로 행동하지 않을 경우
-                                불편한 기색을 드러내거나
-                                상대를 비꼬기도 한다.
-                            </div>
+    <div class="small-text">
 
-                        </div>
+        DEMULCENT SEASHELL
+        <br>
+        #F7C8C2
+        <br><br>
 
+        개인 로고는
+        깨진 하트가 그려진 책을
+        분홍색 리본이 감싸고 있는 형태.
 
-                        <div class="small-box">
+    </div>
 
-                            <div class="small-title">
-                                INNER SIDE
-                            </div>
+</div>
 
-                            <div class="small-text">
-                                자신의 감정을 쉽게 드러내지 않으며
-                                편안하거나 신뢰할 수 있는 상대가 아니라면
-                                먼저 거리를 둔다.
-                                지능적으로는 높은 편이지만
-                                공상에 빠질 때에는 실제 나이보다
-                                어린 소녀처럼 미성숙한 모습을 보인다.
-                            </div>
 
-                        </div>
-
-
-                        <div class="small-box">
-
-                            <div class="small-title">
-                                APPEARANCE
-                            </div>
-
-                            <div class="small-text">
-                                금발의 여성으로 앞머리가 있으며
-                                눈 밑과 입술 아래에 점이 있다.
-                                전체적으로 귀여운 인상을 지녔으며
-                                키가 작은 편이다.
-                            </div>
-
-                        </div>
-
-
-                        <div class="small-box">
-
-                            <div class="small-title">
-                                SYMBOL
-                            </div>
-
-                            <div class="small-text">
-                                DEMULCENT SEASHELL<br>
-                                #F7C8C2<br><br>
-                                깨진 하트가 그려진 책을 감싸고 있는
-                                분홍색 리본.
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- =====================
-                 CANON
-            ====================== -->
-
-            <div class="tab-content" id="canon">
-
-                <div class="character-layout">
-
-                    <div>
-
-                        <img
-                            src="canon02.JPG"
-                            class="character-image"
-                            alt="이상"
-                        >
-
-                    </div>
-
-
-                    <div class="character-info">
-
-                        <div class="small-box">
-
-                            <div class="small-title">
-                                PROFILE
-                            </div>
-
-                            <div class="small-text">
-                                림버스 컴퍼니의 수감자이자
-                                작가 이상의 이름을 사용하는 인물.
-                                과거의 삶과 기억을 간직한 채
-                                림버스 컴퍼니의 여정을 함께하고 있다.
-                            </div>
-
-                        </div>
-
-
-                        <div class="small-box">
-
-                            <div class="small-title">
-                                PERSONALITY
-                            </div>
-
-                            <div class="small-text">
-                                말수가 적고 차분하며 자신의 생각을
-                                직접적으로 표현하기보다는
-                                은유적이고 복잡한 방식으로 이야기한다.
-                                감정과 인간관계를 대하는 방식 역시
-                                독특한 편이다.
-                            </div>
-
-                        </div>
-
-
-                        <div class="small-box">
-
-                            <div class="small-title">
-                                WITH DOLORES
-                            </div>
-
-                            <div class="small-text">
-                                돌로레스와 함께 있을 때에는
-                                평소보다 미묘하게 태도가 달라진다.
-                                서로에게 특별한 감정을 품고 있다는 것을
-                                어느 정도 알고 있으면서도,
-                                그것을 직접 말로 꺼내는 데에는 익숙하지 않다.
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- =====================
-                 WORLD
-            ====================== -->
-
-            <div class="tab-content" id="world">
-
-                <div class="world-box">
-
-                    <div class="world-title">
-                        THE CITY
-                    </div>
-
-                    <div class="world-text">
-                        거대한 도시를 중심으로 수많은 날개와 조직,
-                        해결사들이 존재하는 세계.
-                        각자의 욕망과 목적을 가진 사람들이 살아가며,
-                        도시의 질서와 규칙에서 벗어난 곳에서는
-                        끊임없이 사건이 발생한다.
-                    </div>
-
-                </div>
-
-
-                <div class="world-box">
-
-                    <div class="world-title">
-                        LIMBUS COMPANY
-                    </div>
-
-                    <div class="world-text">
-                        림버스 컴퍼니는 수감자들을 이끌고
-                        도시 곳곳을 돌아다니며 여러 사건을 해결하고,
-                        버려진 L사의 지하 시설에서
-                        황금가지와 관련된 물건을 회수하는 것을
-                        목적으로 움직인다.
-                    </div>
-
-                </div>
-
-
-                <div class="world-box">
-
-                    <div class="world-title">
-                        THE SINNERS
-                    </div>
-
-                    <div class="world-text">
-                        각기 다른 과거와 개성을 가진 수감자들이
-                        버스에 올라타 여정을 함께한다.
-                        서로 전혀 다른 사람들이 하나의 목적 아래
-                        모여 움직이는 만큼 충돌도 많지만,
-                        긴 여정을 거치며 서로에게 영향을 주게 된다.
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- =====================
-                 RELATIONSHIP
-            ====================== -->
-
-            <div class="tab-content" id="relationship">
-
-                <div class="relationship">
-
-                    <div class="relationship-title">
-                        Dolores × 이상
-                    </div>
-
-                    <div class="relationship-line"></div>
-
-
-                    <div class="relationship-text">
-
-                        서로에게 특별한 감정을 품고 있지만,
-                        정작 그 마음을 직접 말하지 못하는 사이.
-
-                        <br><br>
-
-                        처음부터 서로를 특별하게 생각했던 것은 아니었다.
-                        함께 시간을 보내고 대화를 나누는 일이 조금씩 늘어나면서,
-                        어느 순간부터 상대가 자신의 하루에서
-                        너무 자연스러운 존재가 되어버렸다.
-
-                        <br><br>
-
-                        돌로레스는 이상과 함께 있을 때
-                        평소보다 편안해지고,
-                        무심하게 건네는 말 한마디에도 괜히 신경을 쓰게 된다.
-                        하지만 자신의 감정을 들키는 것은 부끄럽고,
-                        혹시라도 그것이 지금의 관계를 어색하게 만들까 두려워
-                        일부러 아무렇지 않은 척 행동한다.
-
-                        <br><br>
-
-                        이상 역시 돌로레스를 특별하게 여기고 있지만
-                        자신의 감정을 명확한 말로 표현하지 않는다.
-                        돌로레스가 가까이 있을 때면 평소보다 시선이 오래 머물고,
-                        그녀가 건네는 말 하나하나를 기억하면서도
-                        정작 본인에게는 아무렇지 않은 일인 것처럼 넘긴다.
-
-                        <br><br>
-
-                        둘 다 상대방이 자신을 어떻게 생각하는지
-                        어렴풋이 눈치채고 있다.
-                        그럼에도 먼저 확인하지 않는다.
-
-                        <br><br>
-
-                        <strong>
-                        좋아한다는 사실보다,
-                        그 마음을 말한 뒤 지금의 관계가
-                        달라질지도 모른다는 두려움이 더 크기 때문이다.
-                        </strong>
-
-                        <br><br>
-
-                        그래서 둘의 관계는 친구와 연인 그 사이
-                        어딘가에 머물러 있다.
-                        같이 있는 시간은 자연스럽고,
-                        서로를 챙기는 행동도 많지만
-                        정작 결정적인 순간에는 아무 말도 하지 않는다.
-
-                        <br><br>
-
-                        가끔은 상대가 먼저 고백해주기를 기다리면서도,
-                        막상 그런 순간이 오면 부끄러워서
-                        피하고 싶어지는 관계.
-
-                        <br><br>
-
-                        <strong>
-                        서로 사랑하고 있지만,
-                        서로에게 그 사실을 말하지 못하고 있는 사이.
-                        </strong>
-
-                    </div>
-
-
-                    <div class="relationship-tags">
-
-                        <span>동료</span>
-                        <span>친밀한 사이</span>
-                        <span>특별한 감정</span>
-                        <span>서로 눈치챔</span>
-                        <span>쌍방 짝사랑</span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- =====================
-                 COMMISSION
-            ====================== -->
-
-            <div class="tab-content" id="commission">
-
-                <div class="commission-grid">
-
-                    <div class="commission-item">
-                        <img src="commission01.JPG" alt="commission 01">
-                        <div class="commission-number">commission 01</div>
-                    </div>
-
-                    <div class="commission-item">
-                        <img src="commission02.JPG" alt="commission 02">
-                        <div class="commission-number">commission 02</div>
-                    </div>
-
-                    <div class="commission-item">
-                        <img src="commission03.JPG" alt="commission 03">
-                        <div class="commission-number">commission 03</div>
-                    </div>
-
-                    <div class="commission-item">
-                        <img src="commission04.JPG" alt="commission 04">
-                        <div class="commission-number">commission 04</div>
-                    </div>
-
-                    <div class="commission-item">
-                        <img src="commission05.JPG" alt="commission 05">
-                        <div class="commission-number">commission 05</div>
-                    </div>
-
-                    <div class="commission-item">
-                        <img src="commission06.JPG" alt="commission 06">
-                        <div class="commission-number">commission 06</div>
-                    </div>
-
-                    <div class="commission-item">
-                        <img src="commission07.JPG" alt="commission 07">
-                        <div class="commission-number">commission 07</div>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- FOOTER -->
-        <footer class="footer">
-
-            <a href="index.html" class="home-link">
-                ← HOME
-            </a>
-
-            <span>
-                made with ♡ / dream archive 02
-            </span>
-
-            <span>
-                02 / 02
-            </span>
-
-        </footer>
-
-    </main>
+</div>
 
 </div>
 
 </div>
 
 
-<!-- LIGHTBOX -->
+<!-- =========================
+     CANON
+========================= -->
 
-<div class="lightbox" id="lightbox">
+<div
+    class="tab-content"
+    id="canon">
 
-    <div class="close-lightbox" id="closeLightbox">
+
+<div class="character-layout">
+
+
+<div>
+
+    <img
+        class="character-image"
+        src="canon02.JPG"
+        alt="Yi Sang">
+
+</div>
+
+
+<div class="character-info">
+
+
+<div class="small-box">
+
+    <div class="small-title">
+        PROFILE
+    </div>
+
+    <div class="small-text">
+
+        림버스 컴퍼니의 수감자.<br><br>
+
+        '이상'이라는 이름으로
+        림버스 컴퍼니의 여정을 함께하는
+        인물이다.<br><br>
+
+        과거의 삶과 기억을 지닌 채
+        현재의 여정에 참여하고 있으며,
+        다른 수감자들과 함께 여러 사건을
+        마주하게 된다.
+
+    </div>
+
+</div>
+
+
+<div class="small-box">
+
+    <div class="small-title">
+        PERSONALITY
+    </div>
+
+    <div class="small-text">
+
+        조용하고 차분한 태도를 보이며
+        자신의 감정이나 생각을
+        직설적으로 드러내기보다는
+        독특하고 비유적인 표현으로
+        전달하는 편이다.<br><br>
+
+        겉으로는 무심하거나 초연해 보이지만
+        그 안에는 많은 생각과 감정을
+        품고 있는 인물이다.
+
+    </div>
+
+</div>
+
+
+<div class="small-box">
+
+    <div class="small-title">
+        MANNER OF SPEECH
+    </div>
+
+    <div class="small-text">
+
+        일반적인 대화와는 조금 다른
+        독특한 표현과 어휘를 사용한다.<br><br>
+
+        감정이나 상황을 직접적으로
+        설명하기보다는 자신의 방식으로
+        돌려 말하거나 비유적으로 표현한다.
+
+    </div>
+
+</div>
+
+
+<div class="small-box">
+
+    <div class="small-title">
+        WITH DOLORES
+    </div>
+
+    <div class="small-text">
+
+        돌로레스에게 특별한 감정을
+        가지고 있지만 그것을 직접적으로
+        표현하지 않는다.<br><br>
+
+        돌로레스 역시 자신을 향한 감정을
+        가지고 있다는 것을 어느 정도
+        알고 있지만,
+        먼저 말하기에는 서로가
+        지나치게 부끄러워한다.
+
+    </div>
+
+</div>
+
+
+<div class="small-box">
+
+    <div class="small-title">
+        RELATION TO HER
+    </div>
+
+    <div class="small-text">
+
+        돌로레스의 행동이나 말을
+        조금씩 관찰하면서도
+        굳이 그것을 지적하지 않는다.<br><br>
+
+        둘만 남아 있을 때에는
+        평소보다 대화가 길어지기도 하지만,
+        서로의 마음을 직접적으로
+        확인하는 순간에는
+        다시 어색하게 물러난다.
+
+    </div>
+
+</div>
+
+
+<div class="small-box">
+
+    <div class="small-title">
+        FEELING
+    </div>
+
+    <div class="small-text">
+
+        좋아하고 있다.<br><br>
+
+        하지만 말하지 않는다.<br><br>
+
+        그리고 돌로레스 역시
+        같은 마음이라는 사실을
+        서로 확신하지 못한 채
+        조용히 마음을 품고 있다.
+
+    </div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     WORLD
+========================= -->
+
+<div
+    class="tab-content"
+    id="world">
+
+
+<div class="world-box">
+
+    <div class="world-title">
+        THE CITY
+    </div>
+
+    <div class="world-text">
+
+        림버스 컴퍼니의 이야기가 펼쳐지는
+        거대한 도시.<br><br>
+
+        수많은 구역과 둥지,
+        조직과 회사들이 존재하며
+        각자의 방식으로 도시의 질서를
+        유지하고 있다.<br><br>
+
+        사람들은 각자의 욕망과 목적을 가지고
+        도시 안에서 살아간다.
+
+    </div>
+
+</div>
+
+
+<div class="world-box">
+
+    <div class="world-title">
+        LIMBUS COMPANY
+    </div>
+
+    <div class="world-text">
+
+        여러 수감자들과 함께
+        도시 곳곳을 돌아다니며
+        다양한 사건에 관여하는 조직.<br><br>
+
+        수감자들은 각자의 과거와
+        죄, 기억을 지닌 채
+        버스를 타고 여정을 이어간다.
+
+    </div>
+
+</div>
+
+
+<div class="world-box">
+
+    <div class="world-title">
+        THE SINNERS
+    </div>
+
+    <div class="world-text">
+
+        림버스 컴퍼니의 여정에 참여하는
+        수감자들.<br><br>
+
+        각자 서로 다른 성격과 과거를 가지고
+        있으며, 함께 행동하면서
+        서로의 관계 또한 조금씩 변화한다.
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<!-- =========================
+     RELATIONSHIP
+========================= -->
+
+<div
+    class="tab-content"
+    id="relationship">
+
+
+<div class="relationship">
+
+
+<div class="relationship-title">
+
+    Dolores ♡ Yi Sang
+
+</div>
+
+
+<div class="relationship-line"></div>
+
+
+<div class="relationship-text">
+
+    <strong>서로 사랑하고 있지만
+    서로 부끄러워서 말하지 못하는 사이.</strong>
+
+    <br><br>
+
+    돌로레스는 이상을 좋아한다.
+    하지만 자신의 마음을 먼저 꺼내는 것은
+    이상하게도 무척 부끄럽게 느껴진다.
+
+    <br><br>
+
+    이상 역시 돌로레스에게
+    특별한 감정을 가지고 있다.
+    그러나 그것을 굳이 말로 확인하려 하지 않는다.
+
+    <br><br>
+
+    둘은 함께 있는 시간이 길어질수록
+    서로를 조금씩 더 편하게 생각하게 되었지만,
+    정작 가장 중요한 감정에 대해서는
+    아무도 먼저 이야기하지 않는다.
+
+    <br><br>
+
+    돌로레스가 먼저 말을 걸면
+    이상은 평소처럼 대답한다.
+
+    <br>
+
+    이상이 조용히 곁에 있으면
+    돌로레스 역시 자연스럽게 그 옆에 머문다.
+
+    <br><br>
+
+    특별한 말을 하지 않아도
+    서로가 서로를 의식하고 있다는 것은
+    어렴풋이 알고 있다.
+
+    <br><br>
+
+    하지만 혹시 자신의 착각일까,
+    혹시 상대는 자신을 그렇게 생각하지 않을까.
+
+    <br><br>
+
+    그런 생각 때문에
+    둘 다 마지막 한마디를 하지 못한다.
+
+    <br><br>
+
+    그래서 지금의 관계는
+    <strong>친구보다 조금 더 가깝고,
+    연인이라고 부르기에는 아직 서툰 관계.</strong>
+
+</div>
+
+
+<div class="relationship-tags">
+
+    <span>mutual crush</span>
+
+    <span>shy</span>
+
+    <span>quiet affection</span>
+
+    <span>friends → lovers</span>
+
+    <span>both unaware</span>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     ILLUST
+========================= -->
+
+<div
+    class="tab-content"
+    id="illust">
+
+
+<div class="small-box"
+     style="margin-bottom:10px;">
+
+    <div class="small-title">
+        ILLUSTRATION ARCHIVE
+    </div>
+
+    <div class="small-text">
+
+        DOLORES × ISANG<br>
+        dream illustration archive ♡
+
+    </div>
+
+</div>
+
+
+<div class="illust-grid">
+
+
+<div class="illust-item"
+     onclick="openLightbox('illust01.JPG')">
+
+    <img
+        src="illust01.JPG"
+        alt="illust 01">
+
+    <div class="illust-number">
+        ILLUST 01
+    </div>
+
+</div>
+
+
+<div class="illust-item"
+     onclick="openLightbox('illust02.JPG')">
+
+    <img
+        src="illust02.JPG"
+        alt="illust 02">
+
+    <div class="illust-number">
+        ILLUST 02
+    </div>
+
+</div>
+
+
+<div class="illust-item"
+     onclick="openLightbox('illust03.JPG')">
+
+    <img
+        src="illust03.JPG"
+        alt="illust 03">
+
+    <div class="illust-number">
+        ILLUST 03
+    </div>
+
+</div>
+
+
+<div class="illust-item"
+     onclick="openLightbox('illust04.JPG')">
+
+    <img
+        src="illust04.JPG"
+        alt="illust 04">
+
+    <div class="illust-number">
+        ILLUST 04
+    </div>
+
+</div>
+
+
+<div class="illust-item"
+     onclick="openLightbox('illust05.JPG')">
+
+    <img
+        src="illust05.JPG"
+        alt="illust 05">
+
+    <div class="illust-number">
+        ILLUST 05
+    </div>
+
+</div>
+
+
+<div class="illust-item"
+     onclick="openLightbox('illust06.JPG')">
+
+    <img
+        src="illust06.JPG"
+        alt="illust 06">
+
+    <div class="illust-number">
+        ILLUST 06
+    </div>
+
+</div>
+
+
+<div class="illust-item"
+     onclick="openLightbox('illust07.JPG')">
+
+    <img
+        src="illust07.JPG"
+        alt="illust 07">
+
+    <div class="illust-number">
+        ILLUST 07
+    </div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<div class="footer">
+
+    <a
+        href="index.html"
+        class="home-link">
+
+        ← HOME
+
+    </a>
+
+
+    <span>
+        dream archive / no.02 ♡
+    </span>
+
+</div>
+
+
+</main>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     LIGHTBOX
+========================= -->
+
+<div
+    class="lightbox"
+    id="lightbox"
+    onclick="closeLightbox()">
+
+    <div
+        class="close-lightbox"
+        onclick="closeLightbox()">
+
         ×
+
     </div>
 
-    <img id="lightboxImage" src="" alt="">
+
+    <img
+        id="lightbox-img"
+        src=""
+        alt="">
 
 </div>
 
 
 <script>
 
-/* -------------------------
-   TAB SYSTEM
-------------------------- */
+/* =========================
+   TAB SWITCH
+========================= */
 
-const tabs = document.querySelectorAll(".tab");
-const contents = document.querySelectorAll(".tab-content");
+const tabs =
+    document.querySelectorAll(".tab");
+
+const contents =
+    document.querySelectorAll(".tab-content");
+
 
 tabs.forEach(tab => {
 
     tab.addEventListener("click", () => {
 
-        const target = tab.dataset.tab;
+        const target =
+            tab.dataset.tab;
 
-        tabs.forEach(t => {
-            t.classList.remove("active");
+
+        tabs.forEach(item => {
+
+            item.classList.remove("active");
+
         });
+
 
         contents.forEach(content => {
+
             content.classList.remove("active");
+
         });
 
+
         tab.classList.add("active");
+
 
         document
             .getElementById(target)
@@ -1255,94 +1787,46 @@ tabs.forEach(tab => {
 });
 
 
-/* -------------------------
+/* =========================
    LIGHTBOX
-------------------------- */
+========================= */
 
-const commissionItems =
-    document.querySelectorAll(".commission-item img");
+function openLightbox(src) {
 
-const lightbox =
-    document.getElementById("lightbox");
+    const lightbox =
+        document.getElementById("lightbox");
 
-const lightboxImage =
-    document.getElementById("lightboxImage");
-
-const closeLightbox =
-    document.getElementById("closeLightbox");
+    const image =
+        document.getElementById("lightbox-img");
 
 
-commissionItems.forEach(image => {
+    image.src = src;
 
-    image.addEventListener("click", () => {
-
-        lightboxImage.src = image.src;
-
-        lightbox.classList.add("show");
-
-    });
-
-});
-
-
-closeLightbox.addEventListener("click", () => {
-
-    lightbox.classList.remove("show");
-
-});
-
-
-lightbox.addEventListener("click", event => {
-
-    if (event.target === lightbox) {
-
-        lightbox.classList.remove("show");
-
-    }
-
-});
-
-
-/* -------------------------
-   MOBILE WINDOW SCALE
-------------------------- */
-
-function scaleWindow() {
-
-    const wrap =
-        document.querySelector(".window-wrap");
-
-    const windowWidth = 680;
-
-    const viewportWidth =
-        window.innerWidth;
-
-    if (viewportWidth < windowWidth + 30) {
-
-        const scale =
-            (viewportWidth - 20) / windowWidth;
-
-        wrap.style.transform =
-            `scale(${scale})`;
-
-        wrap.style.marginBottom =
-            `${-(720 * (1 - scale))}px`;
-
-    } else {
-
-        wrap.style.transform =
-            "scale(1)";
-
-        wrap.style.marginBottom =
-            "0px";
-
-    }
+    lightbox.classList.add("show");
 
 }
 
-window.addEventListener("resize", scaleWindow);
 
-scaleWindow();
+function closeLightbox() {
+
+    document
+        .getElementById("lightbox")
+        .classList.remove("show");
+
+}
+
+
+/* ESC CLOSE */
+
+document.addEventListener("keydown", event => {
+
+    if (event.key === "Escape") {
+
+        closeLightbox();
+
+    }
+
+});
 
 </script>
 
